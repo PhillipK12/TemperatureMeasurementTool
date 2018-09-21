@@ -1,0 +1,106 @@
+﻿<Window x:Class="TemperaturMeasurmentTool.MissingEntryDialog.MissingEntryDialog"
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:timePickerInput="clr-namespace:TemperaturMeasurmentTool.TimePickerInput"
+        mc:Ignorable="d"
+        Title="TMT Missing Entries" Height="370" Width="450" AllowsTransparency="True" WindowStyle="None" Icon="../favicon2.ico" WindowStartupLocation="CenterScreen">
+    <Window.Background>
+        <SolidColorBrush Color="#FF2C2C2C"  Opacity="0.9"/>
+    </Window.Background>
+
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="7*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--Header-->
+        <Grid x:Name="GridHeader" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" MouseLeftButtonDown="GridHeader_OnMouseLeftButtonDown"  Background="#FF2C2C2C">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" Margin="5">
+                <Image Source="../favicon2.ico" Width="18" Height="18" Margin="5,0,5,0"/>
+                <TextBlock Text="TMT Fehlende Einträge" FontSize="14" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White"/>
+            </StackPanel>
+            <Button  Grid.Row="0" Grid.Column="2" Content="&#xE8BB;" Click="BtnClose_OnClick" FontSize="12" FontFamily="Segoe MDL2 Assets" HorizontalAlignment="Right" Foreground="White" VerticalAlignment="Center" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" Margin="5,0,10,0"  MouseEnter="UIElement_OnMouseEnter" MouseLeave="UIElement_OnMouseLeave" />
+        </Grid>
+
+        <ListView x:Name="LstMissingEntries" Background="Transparent" BorderThickness="0,0,1,0" BorderBrush="White" SelectionChanged="LstMissingEntries_SelectionChanged" Grid.Row="1" Grid.Column="0" FontSize="16" Foreground="White" />
+
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition  Height="Auto"/>
+                <RowDefinition  Height="Auto"/>
+                <RowDefinition  Height="Auto"/>
+                <RowDefinition  Height="Auto"/>
+                <RowDefinition  Height="Auto"/>
+                <RowDefinition  Height="*"/>
+            </Grid.RowDefinitions>
+
+            <!--Warn im Urlaub-->
+            <CheckBox Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Content="Urlaubastag" IsChecked="False" Foreground="White" Margin="45,15,0,0"  Checked="CbxTakeVacation_Checked" Unchecked="CbxTakeVacation_Checked" />
+
+            <!--Zeitangabe-->
+            <TextBlock Grid.Row="1" Grid.Column="0" Text="1. Zeit" FontSize="14" VerticalAlignment="Bottom" Foreground="White" Margin="45,30,0,0"/>
+            <timePickerInput:TimePicker Grid.Row="2" Grid.Column="0" x:Name="TimePickerMorgens" Margin="35,0,0,0"/>
+
+            <!--Temperatur-->
+            <TextBlock Grid.Row="1" Grid.Column="1" Text="Temperatureingabe" FontSize="14" Foreground="White" Margin="0,30,0,0"/>
+            <WrapPanel  Grid.Row="2" Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Bottom" >
+                <Border x:Name="borTempMorgens" BorderBrush="Transparent" BorderThickness="2">
+                    <WrapPanel x:Name="TemperaturPanelMorgens" Orientation="Horizontal" VerticalAlignment="Center" >
+                        <Button Click="BtnTempDownMorgens_OnClick" Content="&#xECC9;" Foreground="White" FontSize="16" FontFamily="Segoe MDL2 Assets" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" MouseEnter="UIElement_OnMouseEnter" MouseLeave="UIElement_OnMouseLeave"/>
+                        <TextBox x:Name="TempInputMorgens" PreviewTextInput="temperaturinputMorgens_OnPreviewTextInput"  TextAlignment="Center" MinWidth="80" FontSize="18" Background="#FF494747" BorderBrush="Transparent" SelectionOpacity="1" Foreground="White" TextChanged="TempInputMorgens_TextChanged"/>
+                        <Button Click="BtnTempUpMorgens_OnClick" Content="&#xECC8;" Foreground="White" FontSize="16" FontFamily="Segoe MDL2 Assets" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" MouseEnter="UIElement_OnMouseEnter" MouseLeave="UIElement_OnMouseLeave"/>
+                        <TextBlock x:Name="TxtWarningMorgens" Text="&#xE7BA;" FontSize="18" ToolTip="Temperatur über dem Limit!" FontFamily="Segoe MDL2 Assets" Foreground="Red" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="8,0,8,0" Visibility="Hidden"/>
+                    </WrapPanel>
+                </Border>
+            </WrapPanel>
+
+
+            <!--Zeitangabe-->
+            <TextBlock Grid.Row="3" Grid.Column="0" Text="2. Zeit" FontSize="14" VerticalAlignment="Bottom" Foreground="White" Margin="45,30,0,0"/>
+            <timePickerInput:TimePicker Grid.Row="4" Grid.Column="0" x:Name="TimePickerAbends" Margin="35,0,0,0"/>
+
+            <!--Temperatur-->
+            <TextBlock Grid.Row="3" Grid.Column="1" Text="Temperatureingabe" FontSize="14" Foreground="White" Margin="0,30,0,0"/>
+            <WrapPanel  Grid.Row="4" Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Bottom" >
+                <Border x:Name="borTempAbends" BorderBrush="Transparent" BorderThickness="2">
+                    <WrapPanel x:Name="TemperaturPanelAbends" Orientation="Horizontal" VerticalAlignment="Center">
+                        <Button Click="BtnTempDownAbends_OnClick" Content="&#xECC9;" Foreground="White" FontSize="16" FontFamily="Segoe MDL2 Assets" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" MouseEnter="UIElement_OnMouseEnter" MouseLeave="UIElement_OnMouseLeave"/>
+                        <TextBox x:Name="TempInputAbends" PreviewTextInput="temperaturinputAbends_OnPreviewTextInput"  TextAlignment="Center" MinWidth="80" FontSize="18" Background="#FF494747" BorderBrush="Transparent" SelectionOpacity="1" Foreground="White" TextChanged="TempInputAbends_TextChanged"/>
+                        <Button Click="BtnTempUpAbends_OnClick" Content="&#xECC8;" Foreground="White" FontSize="16" FontFamily="Segoe MDL2 Assets" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" MouseEnter="UIElement_OnMouseEnter" MouseLeave="UIElement_OnMouseLeave"/>
+                        <TextBlock x:Name="TxtWarningAbends" Text="&#xE7BA;" FontSize="18" ToolTip="Temperatur über dem Limit!" FontFamily="Segoe MDL2 Assets" Foreground="Red" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="8,0,8,0" Visibility="Hidden"/>
+                    </WrapPanel>
+                </Border>
+            </WrapPanel>
+
+            <Button Grid.Row="5" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" Margin="40,0,10,10" Height="32"  BorderBrush="#FF00A8DE" HorizontalAlignment="Left"  MouseEnter="UIElement_OnMouseEnter" MouseLeave="UIElement_OnMouseLeave" VerticalAlignment="Bottom">
+                <Button.Content>
+                    <StackPanel Orientation="Horizontal" Margin="5,2,5,2" >
+                        <TextBlock Text="&#xE72D;"  FontSize="14" FontFamily="Segoe MDL2 Assets" Foreground="#FF00A8DE" VerticalAlignment="Center"/>
+                        <TextBlock Text="Speichern" Foreground="White" VerticalAlignment="Center" Margin="5,0,0,0"  MouseEnter="UIElement_OnMouseEnter" MouseLeave="UIElement_OnMouseLeave" />
+                    </StackPanel>
+                </Button.Content>
+            </Button>
+
+        </Grid>
+
+
+
+    </Grid>
+</Window>

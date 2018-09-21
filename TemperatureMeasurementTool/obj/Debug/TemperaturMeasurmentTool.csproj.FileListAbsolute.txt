@@ -1,0 +1,15 @@
+F:\Workplace\praxisprojekt\TemperaturMeasurmentTool\TemperaturMeasurmentTool\bin\Debug\TemperaturMeasurmentTool.exe.config
+F:\Workplace\praxisprojekt\TemperaturMeasurmentTool\TemperaturMeasurmentTool\bin\Debug\TemperaturMeasurmentTool.exe
+F:\Workplace\praxisprojekt\TemperaturMeasurmentTool\TemperaturMeasurmentTool\bin\Debug\TemperaturMeasurmentTool.pdb
+F:\Workplace\praxisprojekt\TemperaturMeasurmentTool\TemperaturMeasurmentTool\obj\Debug\MainWindow.g.cs
+F:\Workplace\praxisprojekt\TemperaturMeasurmentTool\TemperaturMeasurmentTool\obj\Debug\App.g.cs
+F:\Workplace\praxisprojekt\TemperaturMeasurmentTool\TemperaturMeasurmentTool\obj\Debug\TemperaturMeasurmentTool_MarkupCompile.cache
+F:\Workplace\praxisprojekt\TemperaturMeasurmentTool\TemperaturMeasurmentTool\obj\Debug\TemperaturMeasurmentTool_MarkupCompile.lref
+F:\Workplace\praxisprojekt\TemperaturMeasurmentTool\TemperaturMeasurmentTool\obj\Debug\MainWindow.baml
+F:\Workplace\praxisprojekt\TemperaturMeasurmentTool\TemperaturMeasurmentTool\obj\Debug\TemperaturMeasurmentTool.g.resources
+F:\Workplace\praxisprojekt\TemperaturMeasurmentTool\TemperaturMeasurmentTool\obj\Debug\TemperaturMeasurmentTool.Properties.Resources.resources
+F:\Workplace\praxisprojekt\TemperaturMeasurmentTool\TemperaturMeasurmentTool\obj\Debug\TemperaturMeasurmentTool.csproj.GenerateResource.cache
+F:\Workplace\praxisprojekt\TemperaturMeasurmentTool\TemperaturMeasurmentTool\obj\Debug\TemperaturMeasurmentTool.csproj.CoreCompileInputs.cache
+F:\Workplace\praxisprojekt\TemperaturMeasurmentTool\TemperaturMeasurmentTool\obj\Debug\TemperaturMeasurmentTool.exe
+F:\Workplace\praxisprojekt\TemperaturMeasurmentTool\TemperaturMeasurmentTool\obj\Debug\TemperaturMeasurmentTool.pdb
+F:\Workplace\praxisprojekt\TemperaturMeasurmentTool\TemperaturMeasurmentTool\obj\Debug\TemperaturMeasurmentTool.csprojAssemblyReference.cache

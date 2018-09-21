@@ -1,0 +1,61 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="TemperaturMeasurmentTool.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="ExcelFilePath" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="RecentMailadresse" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Phillip.Kalusek@hotmail.de</Value>
+    </Setting>
+    <Setting Name="FileName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">TemperatureMessarumentData</Value>
+    </Setting>
+    <Setting Name="IsCloseAfterSaveEnabled" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="AssignedUsersList" Type="System.Collections.Specialized.StringCollection" Scope="User">
+      <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;string&gt;MJ&lt;/string&gt;
+  &lt;string&gt;ES&lt;/string&gt;
+&lt;/ArrayOfString&gt;</Value>
+    </Setting>
+    <Setting Name="TemperatureLimitFrom" Type="System.Decimal" Scope="User">
+      <Value Profile="(Default)">3.4</Value>
+    </Setting>
+    <Setting Name="TemperatureLimitTo" Type="System.Decimal" Scope="User">
+      <Value Profile="(Default)">4.0</Value>
+    </Setting>
+    <Setting Name="IsShuffleTimeMockupEnabled" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="RecentSinceDateTime" Type="System.DateTime" Scope="User">
+      <Value Profile="(Default)">2016-01-01</Value>
+    </Setting>
+    <Setting Name="RecentTillDateTime" Type="System.DateTime" Scope="User">
+      <Value Profile="(Default)">2018-09-18</Value>
+    </Setting>
+    <Setting Name="IndexRecentSelectedEmployee" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="RecentTemperatureLimit" Type="System.Decimal" Scope="User">
+      <Value Profile="(Default)">3.4</Value>
+    </Setting>
+    <Setting Name="IsCloseAfterSaveSettings" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="MockUpFileName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">TemperatureMessarumentMockupData.xlsx</Value>
+    </Setting>
+    <Setting Name="DateLastRecord" Type="System.DateTime" Scope="User">
+      <Value Profile="(Default)">2018-09-10</Value>
+    </Setting>
+    <Setting Name="MissingDateCollection" Type="System.Collections.Specialized.StringCollection" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="MailTransmitterAdress" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Phillip.Kalusek@hotmail.de</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
