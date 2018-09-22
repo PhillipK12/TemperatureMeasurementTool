@@ -292,7 +292,7 @@ namespace TemperatureMeasurementTool
                         {
                             actWorksheet.Cells["E" + rowCount + ":G" + rowCount].LoadFromArrays(new List<string[]>()
                                 {
-                                    new[] {TimePicker.GetValueAsString(), TempInput.Text + "°", LstAssignedEmployees.Text}
+                                    new[] {TimePicker.GetValueAsString(), TempInput.Text + Properties.Resources.DegreeSymbol, LstAssignedEmployees.Text}
                                 });
                             edited = true;
                         }
@@ -304,7 +304,7 @@ namespace TemperatureMeasurementTool
                         {
                             new[]
                             {
-                                DtpActualDate.Text, TimePicker.GetValueAsString(), TempInput.Text + "°",
+                                DtpActualDate.Text, TimePicker.GetValueAsString(), TempInput.Text + Properties.Resources.DegreeSymbol,
                                 LstAssignedEmployees.Text
                             }
                         });
@@ -319,7 +319,7 @@ namespace TemperatureMeasurementTool
                 }
                 catch (InvalidOperationException ee)
                 {
-                    var result = MessageBox.Show("Die Datei wird gerade verwedent. Bitte schließen sie vorerst Excel." + "\n" + "Fehlertext: " + ee.Message, "Excel vorher schließen", MessageBoxButton.OKCancel, MessageBoxImage.Error, MessageBoxResult.Cancel);
+                    var result = MessageBox.Show(Properties.Resources.ErrorMessageExcelFileIsStillOpen + "\n" + Properties.Resources.ErrorMessage + ": " + ee.Message, Properties.Resources.ErrorMessageTitle, MessageBoxButton.OKCancel, MessageBoxImage.Error, MessageBoxResult.Cancel);
                     while (result != MessageBoxResult.Cancel && !isSaved)
                     {
                         try
@@ -329,7 +329,7 @@ namespace TemperatureMeasurementTool
                         }
                         catch (InvalidOperationException)
                         {
-                            result = MessageBox.Show("Die Datei wird gerade verwedent. Bitte schließen sie vorerst Excel." + "\n" + "Fehlertext: " + ee.Message, "Excel vorher schließen", MessageBoxButton.OKCancel, MessageBoxImage.Error, MessageBoxResult.Cancel);
+                            result = MessageBox.Show(Properties.Resources.ErrorMessageExcelFileIsStillOpen + "\n" + Properties.Resources.ErrorMessage + ": " + ee.Message, Properties.Resources.ErrorMessageTitle, MessageBoxButton.OKCancel, MessageBoxImage.Error, MessageBoxResult.Cancel);
                         }
                     }
                 }

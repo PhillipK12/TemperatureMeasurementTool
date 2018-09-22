@@ -117,6 +117,18 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="DegreeSymbol" xml:space="preserve">
+    <value>°</value>
+  </data>
+  <data name="ErrorMessage" xml:space="preserve">
+    <value>Fehlermeldung</value>
+  </data>
+  <data name="ErrorMessageExcelFileIsStillOpen" xml:space="preserve">
+    <value>Die Datei wird gerade verwedent. Bitte schließen sie vorerst Excel.</value>
+  </data>
+  <data name="ErrorMessageTitle" xml:space="preserve">
+    <value>Excel vorher schließen</value>
+  </data>
   <data name="ExcelFile_TitleColumn_Date" xml:space="preserve">
     <value>Datum</value>
   </data>

@@ -61,6 +61,42 @@ namespace TemperatureMeasurementTool.Properties {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die ° ähnelt.
+        /// </summary>
+        public static string DegreeSymbol {
+            get {
+                return ResourceManager.GetString("DegreeSymbol", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Fehlermeldung ähnelt.
+        /// </summary>
+        public static string ErrorMessage {
+            get {
+                return ResourceManager.GetString("ErrorMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Die Datei wird gerade verwedent. Bitte schließen sie vorerst Excel. ähnelt.
+        /// </summary>
+        public static string ErrorMessageExcelFileIsStillOpen {
+            get {
+                return ResourceManager.GetString("ErrorMessageExcelFileIsStillOpen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Excel vorher schließen ähnelt.
+        /// </summary>
+        public static string ErrorMessageTitle {
+            get {
+                return ResourceManager.GetString("ErrorMessageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Datum ähnelt.
         /// </summary>
         public static string ExcelFile_TitleColumn_Date {
