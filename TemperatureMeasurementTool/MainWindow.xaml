@@ -1,11 +1,10 @@
-﻿<Window
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+﻿<Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:timePickerInput="clr-namespace:TemperaturMeasurmentTool.TimePickerInput"
-        xmlns:p="clr-namespace:TemperaturMeasurmentTool.Properties"
-        x:Class="TemperatureMeasurmentTool.MainWindow"
+        xmlns:timePickerInput="clr-namespace:TemperatureMeasurementTool"
+        xmlns:p="clr-namespace:TemperatureMeasurementTool.Properties"
+        x:Class="TemperatureMeasurementTool.MainWindow"
         mc:Ignorable="d"
         Title="TMT Eingabe" Height="439.774" Width="424.97" AllowsTransparency="True" WindowStyle="None" Icon="favicon2.ico" Loaded="MainWindow_OnLoaded">
     <Window.Resources>

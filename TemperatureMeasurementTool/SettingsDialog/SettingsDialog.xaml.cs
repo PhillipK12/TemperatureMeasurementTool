@@ -3,11 +3,10 @@ using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 using System.Windows.Input;
 using System.Windows.Media;
-using TemperaturMeasurmentTool.Properties;
+using TemperatureMeasurementTool.Properties;
 using System.IO;
 using Microsoft.Win32;
 using System.ComponentModel;
-using TemperatureMeasurmentTool;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -19,17 +18,17 @@ using Fsolutions.Fbase.Common.Mail;
 using OfficeOpenXml;
 using OfficeOpenXml.Style;
 using Microsoft.Office.Interop.Excel;
-using System.Reflection;
 using Button = System.Windows.Controls.Button;
 using CheckBox = System.Windows.Controls.CheckBox;
 using TextBox = System.Windows.Controls.TextBox;
+using Window = System.Windows.Window;
 
-namespace TemperaturMeasurmentTool.SettingsDialog
+namespace TemperatureMeasurementTool
 {
     /// <summary>
     /// Interaktionslogik für SettingsDialog.xaml
     /// </summary>
-    public partial class SettingsDialog
+    public partial class SettingsDialog : Window
     {
         private bool _isSaved = true;
 

@@ -1,5 +1,5 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="TemperaturMeasurmentTool.Properties" GeneratedClassName="Settings">
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="TemperatureMeasurementTool.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
     <Setting Name="ExcelFilePath" Type="System.String" Scope="User">
@@ -9,7 +9,7 @@
       <Value Profile="(Default)">Phillip.Kalusek@hotmail.de</Value>
     </Setting>
     <Setting Name="FileName" Type="System.String" Scope="User">
-      <Value Profile="(Default)">TemperatureMessarumentData</Value>
+      <Value Profile="(Default)">TemperatureMeasurement</Value>
     </Setting>
     <Setting Name="IsCloseAfterSaveEnabled" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
@@ -46,7 +46,7 @@
       <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="MockUpFileName" Type="System.String" Scope="User">
-      <Value Profile="(Default)">TemperatureMessarumentMockupData.xlsx</Value>
+      <Value Profile="(Default)">TemperatureMeasurementMockupData.xlsx</Value>
     </Setting>
     <Setting Name="DateLastRecord" Type="System.DateTime" Scope="User">
       <Value Profile="(Default)">2018-09-10</Value>

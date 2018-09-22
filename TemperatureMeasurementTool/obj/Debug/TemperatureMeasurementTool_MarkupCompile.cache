@@ -1,20 +1,20 @@
-﻿TemperaturMeasurmentTool
+﻿TemperatureMeasurementTool
 
 
 winexe
 C#
 .cs
 C:\Users\Phillip\Entwicklung\TemperatureMeasurementTool\TemperatureMeasurementTool\obj\Debug\
-TemperaturMeasurmentTool
+TemperatureMeasurementTool
 none
 false
 DEBUG;TRACE
 C:\Users\Phillip\Entwicklung\TemperatureMeasurementTool\TemperatureMeasurementTool\App.xaml
-5-967748469
+5558031690
 
-10-2048311846
+10279327103
 22232484218
-ExportDialog\ExcelExportDialog.xaml;MainWindow.xaml;MissingEntryDialog\MissingEntryDialog.xaml;SettingsDialog\SettingsDialog.xaml;TimePickerInput\TimePicker.xaml;
+ExportDialog\ExcelExportDialog.xaml;MainWindow.xaml;MissingEntryDialog\MissingEntryDialog.xaml;SettingsDialog\SettingsDialog.xaml;TimePicker\TimePicker.xaml;
 
 False
 

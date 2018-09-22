@@ -9,15 +9,13 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 using OfficeOpenXml;
-using TemperaturMeasurmentTool.Properties;
-using TemperaturMeasurmentTool.SettingsDialog;
-using TemperaturMeasurmentTool.ExcelExportDialog;
+using TemperatureMeasurementTool.Properties;
 using Timer = System.Timers.Timer;
 using System.Windows.Controls.Primitives;
 using Nager.Date;
 using OfficeOpenXml.Style;
 
-namespace TemperatureMeasurmentTool
+namespace TemperatureMeasurementTool
 {
     /// <summary>
     /// The logic behind the MainWindow.xaml
@@ -321,7 +319,7 @@ namespace TemperatureMeasurmentTool
                             excelFile.Save();
                             isSaved = true;
                         }
-                        catch (InvalidOperationException ebe)
+                        catch (InvalidOperationException)
                         {
                             result = MessageBox.Show("Die Datei wird gerade verwedent. Bitte schließen sie vorerst Excel." + "\n" + "Fehlertext: " + ee.Message, "Excel vorher schließen", MessageBoxButton.OKCancel, MessageBoxImage.Error, MessageBoxResult.Cancel);
                         }

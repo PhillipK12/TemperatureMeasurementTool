@@ -2,18 +2,16 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
-using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Controls.Primitives;
 using System.Windows.Input;
 using System.Windows.Media;
 using Nager.Date;
 using OfficeOpenXml;
 using OfficeOpenXml.Style;
-using TemperaturMeasurmentTool.Properties;
+using TemperatureMeasurementTool.Properties;
 
-namespace TemperaturMeasurmentTool.ExcelExportDialog
+namespace TemperatureMeasurementTool
 {
     /// <summary>
     /// Interaktionslogik für ExportDialog.xaml
@@ -26,6 +24,7 @@ namespace TemperaturMeasurmentTool.ExcelExportDialog
             DtpMockupFromDate.SelectedDate = Settings.Default.RecentSinceDateTime;
             DtpMockupToDate.SelectedDate = Settings.Default.RecentTillDateTime;
             TxtDateipfad.Text = Path.GetDirectoryName(Settings.Default.ExcelFilePath).Replace("\\", "/") + "/" + Settings.Default.MockUpFileName;
+            
         }
 
         /// <summary>

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TemperaturMeasurmentTool.Properties {
+namespace TemperatureMeasurementTool.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
@@ -49,7 +49,7 @@ namespace TemperaturMeasurmentTool.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("TemperatureMessarumentData")]
+        [global::System.Configuration.DefaultSettingValueAttribute("TemperatureMeasurement")]
         public string FileName {
             get {
                 return ((string)(this["FileName"]));
@@ -183,7 +183,7 @@ namespace TemperaturMeasurmentTool.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("TemperatureMessarumentMockupData.xlsx")]
+        [global::System.Configuration.DefaultSettingValueAttribute("TemperatureMeasurementMockupData.xlsx")]
         public string MockUpFileName {
             get {
                 return ((string)(this["MockUpFileName"]));

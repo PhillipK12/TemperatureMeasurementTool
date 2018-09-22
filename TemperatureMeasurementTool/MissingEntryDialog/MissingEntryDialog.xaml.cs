@@ -12,9 +12,9 @@ using System.Windows.Media;
 using Nager.Date;
 using OfficeOpenXml;
 using OfficeOpenXml.Style;
-using TemperaturMeasurmentTool.Properties;
+using TemperatureMeasurementTool.Properties;
 
-namespace TemperaturMeasurmentTool.MissingEntryDialog
+namespace TemperatureMeasurementTool.MissingEntryDialog
 {
     /// <summary>
     /// Interaktionslogik für ExportDialog.xaml
