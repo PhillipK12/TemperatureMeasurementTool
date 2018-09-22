@@ -1,3 +1,7 @@
 #No DLL's and EXE's
 TemperatureMeasurement/bin
 TemperatureMeasurement/obj
+
+#No VS Settings
+TemperatureMeasurement/.vs
+

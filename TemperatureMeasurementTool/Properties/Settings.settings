@@ -57,5 +57,8 @@
     <Setting Name="MailTransmitterAdress" Type="System.String" Scope="User">
       <Value Profile="(Default)">Phillip.Kalusek@hotmail.de</Value>
     </Setting>
+    <Setting Name="CountryCode" Type="System.String" Scope="User">
+      <Value Profile="(Default)">DE-HE</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

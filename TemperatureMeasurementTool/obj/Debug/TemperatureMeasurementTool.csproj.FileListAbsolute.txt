@@ -57,3 +57,4 @@ C:\Users\Phillip\Entwicklung\TemperatureMeasurementTool\TemperatureMeasurementTo
 C:\Users\Phillip\Entwicklung\TemperatureMeasurementTool\TemperatureMeasurementTool\obj\Debug\TemperatureMeasurementTool.pdb
 C:\Users\Phillip\Entwicklung\TemperatureMeasurementTool\TemperatureMeasurementTool\obj\Debug\TimePicker\TimePicker.baml
 C:\Users\Phillip\Entwicklung\TemperatureMeasurementTool\TemperatureMeasurementTool\obj\Debug\TimePicker\TimePicker.g.cs
+C:\Users\Phillip\Entwicklung\TemperatureMeasurementTool\TemperatureMeasurementTool\obj\Debug\TemperatureMeasurementTool.csprojAssemblyReference.cache

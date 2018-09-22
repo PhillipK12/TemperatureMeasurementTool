@@ -61,11 +61,101 @@ namespace TemperatureMeasurementTool.Properties {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Datum ähnelt.
+        /// </summary>
+        public static string ExcelFile_TitleColumn_Date {
+            get {
+                return ResourceManager.GetString("ExcelFile_TitleColumn_Date", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Kürzel ähnelt.
+        /// </summary>
+        public static string ExcelFile_TitleColumn_FirstEmployee {
+            get {
+                return ResourceManager.GetString("ExcelFile_TitleColumn_FirstEmployee", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die 1. Temperatur ähnelt.
+        /// </summary>
+        public static string ExcelFile_TitleColumn_FirstTemp {
+            get {
+                return ResourceManager.GetString("ExcelFile_TitleColumn_FirstTemp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Uhrzeit ähnelt.
+        /// </summary>
+        public static string ExcelFile_TitleColumn_FirstTime {
+            get {
+                return ResourceManager.GetString("ExcelFile_TitleColumn_FirstTime", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Kürzel ähnelt.
+        /// </summary>
+        public static string ExcelFile_TitleColumn_SecondEmployee {
+            get {
+                return ResourceManager.GetString("ExcelFile_TitleColumn_SecondEmployee", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die 2. Temperatur ähnelt.
+        /// </summary>
+        public static string ExcelFile_TitleColumn_SecondTemp {
+            get {
+                return ResourceManager.GetString("ExcelFile_TitleColumn_SecondTemp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Uhrzeit ähnelt.
+        /// </summary>
+        public static string ExcelFile_TitleColumn_SecondTime {
+            get {
+                return ResourceManager.GetString("ExcelFile_TitleColumn_SecondTime", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Feiertag ähnelt.
+        /// </summary>
+        public static string Holiday {
+            get {
+                return ResourceManager.GetString("Holiday", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Urlaub ähnelt.
+        /// </summary>
+        public static string Vacation {
+            get {
+                return ResourceManager.GetString("Vacation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die 1.1 ähnelt.
         /// </summary>
         public static string Version {
             get {
                 return ResourceManager.GetString("Version", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Wochenende ähnelt.
+        /// </summary>
+        public static string Weekend {
+            get {
+                return ResourceManager.GetString("Weekend", resourceCulture);
             }
         }
     }

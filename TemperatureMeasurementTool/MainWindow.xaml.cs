@@ -184,7 +184,15 @@ namespace TemperatureMeasurementTool
                 {
                     actWorksheet = excelFile.Workbook.Worksheets.Add(pickedDate.Year.ToString());
                     excelFile.Workbook.Worksheets.MoveToStart(actWorksheet.Index);
-                    actWorksheet.Cells["A1:G1"].LoadFromArrays(new List<string[]>() { new[] { "Datum", "1. Zeit", "1. Temperatur", "Kürzel", "2. Zeit", "2.Temperatur", "Kürzel" } });
+                    actWorksheet.Cells["A1:G1"].LoadFromArrays(new List<string[]>() { new[] {
+                        Properties.Resources.ExcelFile_TitleColumn_Date , 
+                        Properties.Resources.ExcelFile_TitleColumn_FirstTime,
+                        Properties.Resources.ExcelFile_TitleColumn_FirstTemp,
+                        Properties.Resources.ExcelFile_TitleColumn_FirstEmployee,
+                        Properties.Resources.ExcelFile_TitleColumn_SecondTime,
+                        Properties.Resources.ExcelFile_TitleColumn_SecondTemp,
+                        Properties.Resources.ExcelFile_TitleColumn_SecondEmployee,
+                    } });
                     // Cells args are first row, first col, last row, last col
                     using (var rowRngHeader = actWorksheet.Cells[1, 1, 1, 7])
                     {
@@ -218,9 +226,9 @@ namespace TemperatureMeasurementTool
                                 string Text = string.Empty;
 
                                 //Wenn der fehlende Eintrag ein Feiertag war
-                                if (DateSystem.IsOfficialPublicHolidayByCounty(nextdate, CountryCode.DE, "DE-HE"))
+                                if (DateSystem.IsOfficialPublicHolidayByCounty(nextdate, CountryCode.DE, Settings.Default.CountryCode))
                                 {
-                                    Text = "Feiertag";
+                                    Text = Properties.Resources.Holiday;
                                     actWorksheet.Cells[$"B{rowCount}:G{rowCount}"].Merge = true;
                                     actWorksheet.Cells[$"B{rowCount}"].Value = Text;
                                     actWorksheet.Cells[$"B{rowCount}"].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
@@ -228,7 +236,7 @@ namespace TemperatureMeasurementTool
                                 //wenn der fehlende Eintrag ein Tag des Wochenende ist
                                 else if (nextdate.DayOfWeek == DayOfWeek.Sunday || nextdate.DayOfWeek == DayOfWeek.Saturday)
                                 {
-                                    Text = "Wochenende";
+                                    Text = Properties.Resources.Weekend;
                                     actWorksheet.Cells[$"B{rowCount}:G{rowCount}"].Merge = true;
                                     actWorksheet.Cells[$"B{rowCount}"].Value = Text;
                                     actWorksheet.Cells[$"B{rowCount}"].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
@@ -267,7 +275,7 @@ namespace TemperatureMeasurementTool
                     {
                         rowCount = ++rowCount;
                         actWorksheet.Cells["A" + rowCount].Value = dtFrom.ToShortDateString();
-                        string Text = "Urlaub";
+                        string Text = Properties.Resources.Vacation;
                         actWorksheet.Cells[$"B{rowCount}:G{rowCount}"].Merge = true;
                         actWorksheet.Cells[$"B{rowCount}"].Value = Text;
                         actWorksheet.Cells[$"B{rowCount}"].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;

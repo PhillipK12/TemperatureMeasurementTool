@@ -117,7 +117,37 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ExcelFile_TitleColumn_Date" xml:space="preserve">
+    <value>Datum</value>
+  </data>
+  <data name="ExcelFile_TitleColumn_FirstEmployee" xml:space="preserve">
+    <value>Kürzel</value>
+  </data>
+  <data name="ExcelFile_TitleColumn_FirstTemp" xml:space="preserve">
+    <value>1. Temperatur</value>
+  </data>
+  <data name="ExcelFile_TitleColumn_FirstTime" xml:space="preserve">
+    <value>Uhrzeit</value>
+  </data>
+  <data name="ExcelFile_TitleColumn_SecondEmployee" xml:space="preserve">
+    <value>Kürzel</value>
+  </data>
+  <data name="ExcelFile_TitleColumn_SecondTemp" xml:space="preserve">
+    <value>2. Temperatur</value>
+  </data>
+  <data name="ExcelFile_TitleColumn_SecondTime" xml:space="preserve">
+    <value>Uhrzeit</value>
+  </data>
+  <data name="Holiday" xml:space="preserve">
+    <value>Feiertag</value>
+  </data>
+  <data name="Vacation" xml:space="preserve">
+    <value>Urlaub</value>
+  </data>
   <data name="Version" xml:space="preserve">
     <value>1.1</value>
+  </data>
+  <data name="Weekend" xml:space="preserve">
+    <value>Wochenende</value>
   </data>
 </root>

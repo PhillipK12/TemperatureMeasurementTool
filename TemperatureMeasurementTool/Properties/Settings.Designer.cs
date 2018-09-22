@@ -227,5 +227,17 @@ namespace TemperatureMeasurementTool.Properties {
                 this["MailTransmitterAdress"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("DE-HE")]
+        public string CountryCode {
+            get {
+                return ((string)(this["CountryCode"]));
+            }
+            set {
+                this["CountryCode"] = value;
+            }
+        }
     }
 }
