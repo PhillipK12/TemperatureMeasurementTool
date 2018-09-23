@@ -6,7 +6,7 @@
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="RecentMailadresse" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Phillip.Kalusek@hotmail.de</Value>
+      <Value Profile="(Default)" />
     </Setting>
     <Setting Name="FileName" Type="System.String" Scope="User">
       <Value Profile="(Default)">TemperatureMeasurement</Value>
@@ -55,7 +55,7 @@
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="MailTransmitterAdress" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Phillip.Kalusek@hotmail.de</Value>
+      <Value Profile="(Default)" />
     </Setting>
     <Setting Name="CountryCode" Type="System.String" Scope="User">
       <Value Profile="(Default)">DE-HE</Value>

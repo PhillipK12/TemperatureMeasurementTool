@@ -37,7 +37,7 @@ namespace TemperatureMeasurementTool.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Phillip.Kalusek@hotmail.de")]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string RecentMailadresse {
             get {
                 return ((string)(this["RecentMailadresse"]));
@@ -218,7 +218,7 @@ namespace TemperatureMeasurementTool.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Phillip.Kalusek@hotmail.de")]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string MailTransmitterAdress {
             get {
                 return ((string)(this["MailTransmitterAdress"]));
