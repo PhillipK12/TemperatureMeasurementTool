@@ -215,9 +215,9 @@
                 <TextBlock Text="{x:Static p:Resources.MainWindow_Header_Title}" FontSize="14" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White"/>
             </StackPanel>
             <StackPanel Grid.Row="0" Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Right" >
-                <Button Content="&#xE72D;" Click="BtnOpenExport_OnClick"  FontSize="16" FontFamily="Segoe MDL2 Assets" HorizontalAlignment="Right" Foreground="White" VerticalAlignment="Center" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" MouseEnter="UIElement_OnMouseEnter" MouseLeave="UIElement_OnMouseLeave" Margin="0,0,5,0"/>
-                <Button  Content="&#xE713;" Click="BtnOpenSettings_OnClick" FontSize="14" FontFamily="Segoe MDL2 Assets" HorizontalAlignment="Right" Foreground="White" VerticalAlignment="Center" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" MouseEnter="UIElement_OnMouseEnter" MouseLeave="UIElement_OnMouseLeave"/>
-                <Button  Content="&#xE8BB;" Click="CloseWindow_OnClick" FontSize="12" FontFamily="Segoe MDL2 Assets" HorizontalAlignment="Right" Foreground="White" VerticalAlignment="Center" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" MouseEnter="UIElement_OnMouseEnter" MouseLeave="UIElement_OnMouseLeave" Margin="5,0,5,0"/>
+                <Button Content="&#xE72D;" Click="OpenExportDialog_OnClick"  FontSize="16" FontFamily="Segoe MDL2 Assets" HorizontalAlignment="Right" Foreground="White" VerticalAlignment="Center" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" MouseEnter="AnimationForegroundColor_OnMouseEnter" MouseLeave="AnimationForegroundColor_OnMouseLeave" Margin="0,0,5,0"/>
+                <Button  Content="&#xE713;" Click="BtnOpenSettings_OnClick" FontSize="14" FontFamily="Segoe MDL2 Assets" HorizontalAlignment="Right" Foreground="White" VerticalAlignment="Center" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" MouseEnter="AnimationForegroundColor_OnMouseEnter" MouseLeave="AnimationForegroundColor_OnMouseLeave"/>
+                <Button  Content="&#xE8BB;" Click="CloseWindow_OnClick" FontSize="12" FontFamily="Segoe MDL2 Assets" HorizontalAlignment="Right" Foreground="White" VerticalAlignment="Center" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" MouseEnter="AnimationForegroundColor_OnMouseEnter" MouseLeave="AnimationForegroundColor_OnMouseLeave" Margin="5,0,5,0"/>
             </StackPanel>
         </Grid>
 
@@ -248,7 +248,7 @@
                 <StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <TextBlock  Text="&#xED28;" x:Name="symbolVacation" FontSize="14" Foreground="#FF00A8DE" FontFamily="Segoe MDL2 Assets" VerticalAlignment="Center"  Margin="5" />
-                        <TextBlock Text="{x:Static p:Resources.MainWindow_EnterVacation}" x:Name="labelVacation" FontSize="14" Foreground="White" VerticalAlignment="Center"  MouseEnter="UIElement_OnMouseEnter" MouseLeave="UIElement_OnMouseLeave"/>
+                        <TextBlock Text="{x:Static p:Resources.MainWindow_EnterVacation}" x:Name="labelVacation" FontSize="14" Foreground="White" VerticalAlignment="Center"  MouseEnter="AnimationForegroundColor_OnMouseEnter" MouseLeave="AnimationForegroundColor_OnMouseLeave"/>
                     </StackPanel>
                     <Border x:Name="BordVacation" BorderBrush="#FF00A8DE" BorderThickness="2" Width="80" HorizontalAlignment="Stretch"  Visibility="Hidden" />
                 </StackPanel>
@@ -293,9 +293,9 @@
             <WrapPanel  Grid.Row="3" Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center" >
                 <Border x:Name="borTemp" BorderBrush="Transparent" BorderThickness="2">
                     <WrapPanel Orientation="Horizontal" VerticalAlignment="Center">
-                        <Button Click="BtnTempDown_OnClick" Content="&#xECC9;" Foreground="White" FontSize="16" FontFamily="Segoe MDL2 Assets" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" MouseEnter="UIElement_OnMouseEnter" MouseLeave="UIElement_OnMouseLeave"/>
-                        <TextBox x:Name="TempInput" PreviewTextInput="Temperaturinput_OnPreviewTextInput"  TextAlignment="Center" MinWidth="80" FontSize="18" Background="#FF494747" BorderBrush="Transparent" SelectionOpacity="1" Foreground="White" TextChanged="TempInput_OnTextChanged"/>
-                        <Button Click="BtnTempUp_OnClick" Content="&#xECC8;" Foreground="White" FontSize="16" FontFamily="Segoe MDL2 Assets" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" MouseEnter="UIElement_OnMouseEnter" MouseLeave="UIElement_OnMouseLeave"/>
+                        <Button Click="BtnTempDown_OnClick" Content="&#xECC9;" Foreground="White" FontSize="16" FontFamily="Segoe MDL2 Assets" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" MouseEnter="AnimationForegroundColor_OnMouseEnter" MouseLeave="AnimationForegroundColor_OnMouseLeave"/>
+                        <TextBox x:Name="TempInput" PreviewTextInput="Temperaturinput_OnPreviewTextInput"  TextAlignment="Center" MinWidth="80" FontSize="18" Background="#FF494747" BorderBrush="Transparent" SelectionOpacity="1" Foreground="White" TextChanged="ChecksTemperatureInput_OnTextChanged"/>
+                        <Button Click="BtnTempUp_OnClick" Content="&#xECC8;" Foreground="White" FontSize="16" FontFamily="Segoe MDL2 Assets" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" MouseEnter="AnimationForegroundColor_OnMouseEnter" MouseLeave="AnimationForegroundColor_OnMouseLeave"/>
                         <TextBlock x:Name="TxtWarning" Text="&#xE7BA;" FontSize="18" ToolTip="{x:Static p:Resources.MainWindow_ToolTip_Temperature_Warning}" FontFamily="Segoe MDL2 Assets" Foreground="Red" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="8,0,8,0" Visibility="Hidden"/>
                     </WrapPanel>
                 </Border>
@@ -337,7 +337,7 @@
         
         <!--Footer-->
         <StackPanel Orientation="Horizontal"  Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Background="#FF2C2C2C">
-            <Button Click="BtnDone_OnClick" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" Margin="50,10,0,10" Height="32"  BorderBrush="#FF00A8DE" HorizontalAlignment="Left"  MouseEnter="UIElement_OnMouseEnter" MouseLeave="UIElement_OnMouseLeave">
+            <Button Click="BtnDone_OnClick" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" Margin="50,10,0,10" Height="32"  BorderBrush="#FF00A8DE" HorizontalAlignment="Left"  MouseEnter="AnimationForegroundColor_OnMouseEnter" MouseLeave="AnimationForegroundColor_OnMouseLeave">
                 <StackPanel Orientation="Horizontal" Margin="5,2,5,2" >
                     <TextBlock Text="&#xE73E;"  FontSize="14" FontFamily="Segoe MDL2 Assets" Foreground="#FF00A8DE" VerticalAlignment="Center"/>
                     <TextBlock Text="{x:Static p:Resources.MainWindow_Label_Done}" Foreground="White" VerticalAlignment="Center" Margin="5,0,0,0"/>

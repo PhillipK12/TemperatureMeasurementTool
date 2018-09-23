@@ -18,8 +18,8 @@ using OfficeOpenXml.Style;
 namespace TemperatureMeasurementTool
 {
     /// <summary>
-    /// The logic behind the MainWindow.xaml
     /// The Logic of the Main Window shown in the bottom right of the desktop
+    /// The logic behind the MainWindow.xaml
     /// </summary>
     public partial class MainWindow
     {
@@ -34,7 +34,7 @@ namespace TemperatureMeasurementTool
             InitializeComponent();
             Setup();
         }
-
+        
         /// <summary>
         /// When starting the main window the Setup method loads users settings
         /// and importent data for the interaction with the user
@@ -87,7 +87,63 @@ namespace TemperatureMeasurementTool
             }
             */
         }
-        
+                
+        /// <summary>
+        /// Check if the entered value if over or under the temperature limits saved in the settings
+        /// If its over or under the temperature limits (coming from the settings) the user gets an warning
+        /// </summary>
+        /// <param name="text"></param>
+        private void CheckTemperatureInput(string text)
+        {
+            if (string.IsNullOrWhiteSpace(text)) return;
+            var tempFrom = Settings.Default.TemperatureLimitFrom;
+            var tempTo = Settings.Default.TemperatureLimitTo;
+            var value = Convert.ToDecimal(text, new NumberFormatInfo() { NumberDecimalSeparator = "," });
+            if (value < tempFrom || value > tempTo)
+            {
+                borTemp.BorderBrush = Brushes.Red;
+                TxtWarning.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                borTemp.BorderBrush = Brushes.Transparent;
+                TxtWarning.Visibility = Visibility.Hidden;
+            }
+        }
+
+        /// <summary>
+        /// After Settings Dialog closes the is a fresh list of all assigned users 
+        /// </summary>
+        internal void SettingsChanged()
+        {
+            //get a fresh list of assigned users
+            LstAssignedEmployees.Items.Clear();
+            if (Settings.Default.AssignedUsersList != null)
+            {
+                foreach (var element in Settings.Default.AssignedUsersList)
+                {
+                    LstAssignedEmployees.Items.Add(element);
+                }
+                LstAssignedEmployees.SelectedIndex = Settings.Default.IndexRecentSelectedEmployee;
+            }
+        }
+
+        /// <summary>
+        /// Shows an information text transmitted by calling the method 
+        /// and it will be shown on the bottom right side of the main window
+        /// </summary>
+        /// <param name="message"></param>
+        public void ShowInformationText(string message)
+        {
+            var timer = new Timer();
+            timer.Interval = 5000;
+            timer.Elapsed += Timer_Elapsed;
+            BorHinweis.Visibility = Visibility.Visible;
+            TxtHinweis.Text = message;
+            timer.Start();
+        }
+
+        #region event methods
         private void CloseWindow_OnClick(object sender, RoutedEventArgs e)
         {
             Close();
@@ -115,30 +171,7 @@ namespace TemperatureMeasurementTool
         {
             _previouseValue = TempInput.Text;
         }
-
-        /// <summary>
-        /// Check if the entered value if over or under the temperature limits saved in the settings
-        /// If its over or under the temperature limits (coming from the settings) the user gets an warning
-        /// </summary>
-        /// <param name="text"></param>
-        private void CheckTemperatureInput(string text)
-        {
-            if (string.IsNullOrWhiteSpace(text)) return;
-            var tempFrom = Settings.Default.TemperatureLimitFrom;
-            var tempTo = Settings.Default.TemperatureLimitTo;
-            var value = Convert.ToDecimal(text, new NumberFormatInfo() { NumberDecimalSeparator = "," });
-            if (value < tempFrom || value > tempTo)
-            {
-                borTemp.BorderBrush = Brushes.Red;
-                TxtWarning.Visibility = Visibility.Visible;
-            }
-            else
-            {
-                borTemp.BorderBrush = Brushes.Transparent;
-                TxtWarning.Visibility = Visibility.Hidden;
-            }
-        }
-
+               
         /// <summary>
         /// Opens a new instance of the SettingsDialog 
         /// </summary>
@@ -320,38 +353,19 @@ namespace TemperatureMeasurementTool
 
             }
         }
-
-        internal void SettingsChanged()
-        {
-            //Liste der Assigned Users muss sich aktualisieren
-            LstAssignedEmployees.Items.Clear();
-            if (Settings.Default.AssignedUsersList != null)
-            {
-                foreach (var element in Settings.Default.AssignedUsersList)
-                {
-                    LstAssignedEmployees.Items.Add(element);
-                }
-                LstAssignedEmployees.SelectedIndex = Settings.Default.IndexRecentSelectedEmployee;
-            }
-        }
-
-        public void ShowInformationText(string message)
-        {
-            var timer = new Timer();
-            timer.Interval = 5000;
-            timer.Elapsed += timer_Elapsed;
-            BorHinweis.Visibility = Visibility.Visible;
-            TxtHinweis.Text = message;
-            timer.Start();
-        }
-
-        private void timer_Elapsed(object sender, EventArgs e)
+        
+        /// <summary>
+        /// Gets called when timer runs out to hide the information text again
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Timer_Elapsed(object sender, EventArgs e)
         {
             Application.Current.Dispatcher.BeginInvoke((Action)(() => BorHinweis.Visibility = Visibility.Collapsed));
         }
 
         /// <summary>
-        /// Die Temperatur um einen Wert runtersetzen
+        /// Substracts the value by 0.1
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -363,6 +377,11 @@ namespace TemperatureMeasurementTool
             CheckTemperatureInput(TempInput.Text);
         }
 
+        /// <summary>
+        /// Adds to the value by 0.1
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnTempUp_OnClick(object sender, RoutedEventArgs e)
         {
             var value = Convert.ToDecimal(TempInput.Text, new NumberFormatInfo() { NumberDecimalSeparator = "," });
@@ -370,21 +389,24 @@ namespace TemperatureMeasurementTool
             TempInput.Text = value.ToString(CultureInfo.CurrentCulture);
             CheckTemperatureInput(TempInput.Text);
         }
-
-
-
-        private void TempInput_OnTextChanged(object sender, TextChangedEventArgs e)
+           
+        /// <summary>
+        /// Checks the temperature input from the user and 
+        /// puts the previous value into the text field in case the input is not valid
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ChecksTemperatureInput_OnTextChanged(object sender, TextChangedEventArgs e)
         {
             if (!Regex.IsMatch(TempInput.Text, "^-?[0-9]?[0-9][.,]?[0-9]?$"))
             {
                 TempInput.Text = _previouseValue;
                 return;
             }
-
             CheckTemperatureInput(TempInput.Text);
         }
 
-        private void UIElement_OnMouseEnter(object sender, MouseEventArgs e)
+        private void AnimationForegroundColor_OnMouseEnter(object sender, MouseEventArgs e)
         {
             if (sender is TextBlock block)
             {
@@ -396,9 +418,8 @@ namespace TemperatureMeasurementTool
                 button.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF00A8DE"));
             }
         }
-
-
-        private void UIElement_OnMouseLeave(object sender, MouseEventArgs e)
+        
+        private void AnimationForegroundColor_OnMouseLeave(object sender, MouseEventArgs e)
         {
             if (sender is TextBlock block)
             {
@@ -411,12 +432,18 @@ namespace TemperatureMeasurementTool
             }
         }
 
-        private void BtnOpenExport_OnClick(object sender, RoutedEventArgs e)
+        private void OpenExportDialog_OnClick(object sender, RoutedEventArgs e)
         {
             _excelExportDialog = new ExportDialog();
             _excelExportDialog.Show();
         }
 
+        /// <summary>
+        /// If user clicks on the button for entering a vacation / free day instead of an temperature input
+        /// it will makes the correct panel visible and the current panel invisible and vice versa
+        /// /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void VacationEntry_CheckChanged(object sender, RoutedEventArgs e)
         {
             var toggleVacation = (ToggleButton)sender;
@@ -436,8 +463,9 @@ namespace TemperatureMeasurementTool
             }
 
         }
+        #endregion
 
-        /* TODO Wird in der nächsten Verison (2.0) vorhanden sein
+        /* TODO Availeable soon in the next version
          */
         //private void HinweisMissingEntry_Click(object sender, RoutedEventArgs e)
         //{
