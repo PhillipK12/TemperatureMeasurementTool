@@ -277,6 +277,168 @@ namespace TemperatureMeasurementTool.Properties {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Inhalt ähnelt.
+        /// </summary>
+        public static string SettingsDialog_Label_Content {
+            get {
+                return ResourceManager.GetString("SettingsDialog_Label_Content", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die PDFs erstellen ähnelt.
+        /// </summary>
+        public static string SettingsDialog_Label_CreatePDFs {
+            get {
+                return ResourceManager.GetString("SettingsDialog_Label_CreatePDFs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Mitarbeiter ähnelt.
+        /// </summary>
+        public static string SettingsDialog_Label_Employee {
+            get {
+                return ResourceManager.GetString("SettingsDialog_Label_Employee", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Keine Exceldatei bekannt. \n Wählen Sie eine Datei aus oder erstellen Sie eine Neue. ähnelt.
+        /// </summary>
+        public static string SettingsDialog_Label_ErrorTextNoExcelFile {
+            get {
+                return ResourceManager.GetString("SettingsDialog_Label_ErrorTextNoExcelFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Datei ähnelt.
+        /// </summary>
+        public static string SettingsDialog_Label_File {
+            get {
+                return ResourceManager.GetString("SettingsDialog_Label_File", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Dateispeicherort ähnelt.
+        /// </summary>
+        public static string SettingsDialog_Label_FileLocation {
+            get {
+                return ResourceManager.GetString("SettingsDialog_Label_FileLocation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Empfänger ähnelt.
+        /// </summary>
+        public static string SettingsDialog_Label_MailsReciever {
+            get {
+                return ResourceManager.GetString("SettingsDialog_Label_MailsReciever", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Sender ähnelt.
+        /// </summary>
+        public static string SettingsDialog_Label_MailsSender {
+            get {
+                return ResourceManager.GetString("SettingsDialog_Label_MailsSender", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Öffnen ähnelt.
+        /// </summary>
+        public static string SettingsDialog_Label_OpenDoc {
+            get {
+                return ResourceManager.GetString("SettingsDialog_Label_OpenDoc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Drucken ähnelt.
+        /// </summary>
+        public static string SettingsDialog_Label_PrintDoc {
+            get {
+                return ResourceManager.GetString("SettingsDialog_Label_PrintDoc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Programm ähnelt.
+        /// </summary>
+        public static string SettingsDialog_Label_Program {
+            get {
+                return ResourceManager.GetString("SettingsDialog_Label_Program", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Speichern ähnelt.
+        /// </summary>
+        public static string SettingsDialog_Label_Save {
+            get {
+                return ResourceManager.GetString("SettingsDialog_Label_Save", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Als E-Mail versenden ähnelt.
+        /// </summary>
+        public static string SettingsDialog_Label_SendAsMail {
+            get {
+                return ResourceManager.GetString("SettingsDialog_Label_SendAsMail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Temperatureingabe ähnelt.
+        /// </summary>
+        public static string SettingsDialog_Label_TemperatureInput {
+            get {
+                return ResourceManager.GetString("SettingsDialog_Label_TemperatureInput", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Nach der Eingabe Programm schließen ähnelt.
+        /// </summary>
+        public static string SettingsDialog_Programm_CloseAfterSave {
+            get {
+                return ResourceManager.GetString("SettingsDialog_Programm_CloseAfterSave", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die TMT Einstellungen ähnelt.
+        /// </summary>
+        public static string SettingsDialog_Title {
+            get {
+                return ResourceManager.GetString("SettingsDialog_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Excel-Datei auswählen ähnelt.
+        /// </summary>
+        public static string SettingsDialog_ToolTip_ChooseExcelFile {
+            get {
+                return ResourceManager.GetString("SettingsDialog_ToolTip_ChooseExcelFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Excel-Datei erstellen ähnelt.
+        /// </summary>
+        public static string SettingsDialog_ToolTip_CreateExcelFile {
+            get {
+                return ResourceManager.GetString("SettingsDialog_ToolTip_CreateExcelFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Urlaub ähnelt.
         /// </summary>
         public static string Vacation {

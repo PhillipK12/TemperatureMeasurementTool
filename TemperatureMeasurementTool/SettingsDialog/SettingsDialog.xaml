@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TemperatureMeasurementTool"
         mc:Ignorable="d"
-        Title="TMT Einstellungen" Height="462.536" Width="431.534" AllowsTransparency="True" WindowStyle="None" Icon="../favicon2.ico" WindowStartupLocation="CenterScreen">
+        Title="{x:Static p:Resources.SettingsDialog_Title}" Height="462.536" Width="431.534" AllowsTransparency="True" WindowStyle="None" Icon="../favicon2.ico" WindowStartupLocation="CenterScreen">
     <Window.Background>
         <SolidColorBrush Color="#FF2C2C2C" Opacity="0.9"/>
     </Window.Background>
@@ -26,7 +26,7 @@
             </Grid.ColumnDefinitions>
             <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" Margin="5">
                 <Image Source="../favicon2.ico" Width="18" Height="18" Margin="5,0,5,0"/>
-                <TextBlock Text="TMT  Einstellungen" FontSize="14" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White"/>
+                <TextBlock Text="{x:Static p:Resources.SettingsDialog_Title}" FontSize="14" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White"/>
             </StackPanel>
             <Button  Grid.Row="0" Grid.Column="2" Content="&#xE8BB;" Click="BtnClose_OnClick" FontSize="12" FontFamily="Segoe MDL2 Assets" HorizontalAlignment="Right" Foreground="White" VerticalAlignment="Center" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" Margin="5,0,10,0"  MouseEnter="UIElement_OnMouseEnter" MouseLeave="UIElement_OnMouseLeave" />
 
@@ -68,7 +68,7 @@
                 </ToggleButton.Style>
                 <ToggleButton.Content>
                     <StackPanel>
-                        <TextBlock Text="Datei" FontSize="18" FontFamily="Segoe UI Light" Foreground="White" HorizontalAlignment="Center" MouseEnter="UIElement_OnMouseEnter" MouseLeave="UIElement_OnMouseLeave" />
+                        <TextBlock Text="{x:Static p:Resources.SettingsDialog_Label_File}" FontSize="18" FontFamily="Segoe UI Light" Foreground="White" HorizontalAlignment="Center" MouseEnter="UIElement_OnMouseEnter" MouseLeave="UIElement_OnMouseLeave" />
                         <Border x:Name="BordDatei" BorderBrush="#FF00A8DE" BorderThickness="2" Width="100" HorizontalAlignment="Stretch"  Visibility="Hidden" />
                     </StackPanel>
                 </ToggleButton.Content>
@@ -98,7 +98,7 @@
                 </ToggleButton.Style>
                 <ToggleButton.Content>
                     <StackPanel>
-                        <TextBlock Text="Inhalt" FontSize="18" FontFamily="Segoe UI Light" Foreground="White"  HorizontalAlignment="Center"  MouseEnter="UIElement_OnMouseEnter" MouseLeave="UIElement_OnMouseLeave"/>
+                        <TextBlock Text="{x:Static p:Resources.SettingsDialog_Label_Content}" FontSize="18" FontFamily="Segoe UI Light" Foreground="White"  HorizontalAlignment="Center"  MouseEnter="UIElement_OnMouseEnter" MouseLeave="UIElement_OnMouseLeave"/>
                         <Border x:Name="BordAllgemein" BorderBrush="#FF00A8DE" BorderThickness="2" Width="100" HorizontalAlignment="Stretch" Visibility="Hidden"  />
                     </StackPanel>
                 </ToggleButton.Content>
@@ -128,7 +128,7 @@
                 </ToggleButton.Style>
                 <ToggleButton.Content>
                     <StackPanel>
-                        <TextBlock Text="Programm" FontSize="18" FontFamily="Segoe UI Light" Foreground="White" HorizontalAlignment="Center"  MouseEnter="UIElement_OnMouseEnter" MouseLeave="UIElement_OnMouseLeave"/>
+                        <TextBlock Text="{x:Static p:Resources.SettingsDialog_Label_Program}" FontSize="18" FontFamily="Segoe UI Light" Foreground="White" HorizontalAlignment="Center"  MouseEnter="UIElement_OnMouseEnter" MouseLeave="UIElement_OnMouseLeave"/>
                         <Border x:Name="BordProgramm" BorderBrush="#FF00A8DE" BorderThickness="2" Width="100" HorizontalAlignment="Stretch"  Visibility="Hidden" />
                     </StackPanel>
                 </ToggleButton.Content>
@@ -162,7 +162,7 @@
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
 
-                    <TextBlock Grid.Row="0" Grid.Column="0" Text="Mitarbeiter"  FontSize="18" FontFamily="Segoe UI Light"  Foreground="White"/>
+                    <TextBlock Grid.Row="0" Grid.Column="0" Text="{x:Static p:Resources.SettingsDialog_Label_Employee}"  FontSize="18" FontFamily="Segoe UI Light"  Foreground="White"/>
                     <TextBox x:Name="TxtNewEmployee" Grid.Row="1" Grid.Column="0" FontSize="16" Background="#FF494747" BorderBrush="Transparent" KeyDown="TxtNewEmployee_OnKeyDown"  Foreground="White"  />
                     <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="1" >
                         <Button Click="AddColleague_OnClick"   Content="&#xE710;" FontSize="16" Foreground="White" FontFamily="Segoe MDL2 Assets" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"  Margin="0,0,5,0"/>
@@ -174,9 +174,9 @@
 
 
                 <!--Temperatur-->
-                <TextBlock  Text="Temperatureingabe"  FontSize="18" FontFamily="Segoe UI Light"  Foreground="White" Margin="0,35,0,0"/>
+                <TextBlock  Text="{x:Static p:Resources.SettingsDialog_Label_TemperatureInput}"  FontSize="18" FontFamily="Segoe UI Light"  Foreground="White" Margin="0,35,0,0"/>
                 <StackPanel Orientation="Horizontal">
-                    <!--Von-->
+                    <!--From-->
                     <StackPanel Orientation="Vertical">
                         <TextBlock  Text="Von" Foreground="White"  Margin="0,5,0,0"/>
                         <WrapPanel Orientation="Horizontal" VerticalAlignment="Center">
@@ -186,7 +186,7 @@
                         </WrapPanel>
                     </StackPanel>
 
-                    <!--Bis-->
+                    <!--Till-->
                     <StackPanel Orientation="Vertical" Margin="50,5,0,0">
                         <TextBlock  Text="Bis" Foreground="White" />
                         <WrapPanel Orientation="Horizontal" VerticalAlignment="Center">
@@ -196,11 +196,9 @@
                         </WrapPanel>
                     </StackPanel>
                 </StackPanel>
-
-                <!--Spalten-->
             </StackPanel>
 
-            <!--Dateieinstellungen-->
+            <!--File settings-->
             <StackPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Margin="10,35,0,0">
                 <StackPanel.Style>
                     <Style TargetType="StackPanel">
@@ -216,22 +214,22 @@
                     </Style>
                 </StackPanel.Style>
                 <StackPanel x:Name="BtnPanelFileOperations" Orientation="Horizontal">
-                    <!--Datei öffnen-->
+                    <!--Open file-->
                     <Button  Click="OpenDoc_OnClick" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" BorderBrush="White" HorizontalAlignment="Left" >
                         <Button.Content>
                             <StackPanel Orientation="Horizontal" Margin="5,2,5,2" >
                                 <TextBlock Text="&#xE8A7;"  FontSize="14" FontFamily="Segoe MDL2 Assets" Foreground="White" VerticalAlignment="Center"/>
-                                <TextBlock Text="Öffnen"  Foreground="White" VerticalAlignment="Center" Margin="5,0,0,0" />
+                                <TextBlock Text="{x:Static p:Resources.SettingsDialog_Label_OpenDoc}"  Foreground="White" VerticalAlignment="Center" Margin="5,0,0,0" />
                             </StackPanel>
                         </Button.Content>
                     </Button>
 
-                    <!--Drucken-->
+                    <!--Print file-->
                     <Button Click="PrintDoc_OnClick" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" BorderBrush="White" HorizontalAlignment="Left" Margin="25,0,0,0" >
                         <Button.Content>
                             <StackPanel Orientation="Horizontal" Margin="5,2,5,2" >
                                 <TextBlock Text="&#xE749;"  FontSize="14" FontFamily="Segoe MDL2 Assets" Foreground="White" VerticalAlignment="Center" />
-                                <TextBlock Text="Drucken"  Foreground="White" VerticalAlignment="Center" Margin="5,0,0,0"/>
+                                <TextBlock Text="{x:Static p:Resources.SettingsDialog_Label_PrintDoc}"  Foreground="White" VerticalAlignment="Center" Margin="5,0,0,0"/>
                             </StackPanel>
                         </Button.Content>
                     </Button>
@@ -240,7 +238,7 @@
                         <Button.Content>
                             <StackPanel Orientation="Horizontal" Margin="5,2,5,2" >
                                 <TextBlock Text="&#xE82E;"  FontSize="14" FontFamily="Segoe MDL2 Assets" Foreground="White" VerticalAlignment="Center" />
-                                <TextBlock Text="PDFs erstellen"  Foreground="White" VerticalAlignment="Center" Margin="5,0,0,0"/>
+                                <TextBlock Text="{x:Static p:Resources.SettingsDialog_Label_CreatePDFs}"  Foreground="White" VerticalAlignment="Center" Margin="5,0,0,0"/>
                             </StackPanel>
                         </Button.Content>
                     </Button>
@@ -250,11 +248,11 @@
                 <Border x:Name="borWarning"  BorderBrush="Red" BorderThickness="1" Visibility="Collapsed">
                     <StackPanel Orientation="Horizontal" Margin="5">
                         <TextBlock x:Name="TxtWarning" Text="&#xE7BA;" FontSize="18" FontFamily="Segoe MDL2 Assets" Foreground="Red" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="8,0,8,0" Visibility="Visible"/>
-                        <TextBlock Foreground="Red" Margin="8,0,8,0" >Keine Exceldatei bekannt. <LineBreak/> Wählen Sie eine Datei aus oder erstellen Sie eine Neue.</TextBlock>
+                        <TextBlock Foreground="Red" Margin="8,0,8,0" Text="{x:Static p:Resources.SettingsDialog_Label_ErrorTextNoExcelFile}" />
                     </StackPanel>
                 </Border>
 
-                <!--Dateispeicherort-->
+                <!--File Location-->
                 <Grid Margin="0,20,0,0">
                     <Grid.RowDefinitions>
                         <RowDefinition />
@@ -265,22 +263,19 @@
                         <ColumnDefinition Width="2*"/>
                     </Grid.ColumnDefinitions>
 
-                    <TextBlock Grid.Row="0" Grid.Column="0" Text="Dateispeicherort" Foreground="White"/>
+                    <TextBlock Grid.Row="0" Grid.Column="0" Text="{x:Static p:Resources.SettingsDialog_Label_FileLocation}" Foreground="White"/>
                     <TextBox x:Name="TbxFileConfigPath"  Grid.Row="1" Grid.Column="0" MinWidth="50" FontSize="16"   Background="#FF494747" BorderBrush="Transparent" SelectionOpacity="1" Foreground="White"  />
                     <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="1" >
-                        <Button Click="ChooseExcelFile_Click" ToolTip="Excel-Datei auswählen"  Content="&#xE8E5;" Foreground="White" FontSize="16" FontFamily="Segoe MDL2 Assets" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" HorizontalAlignment="Left" Margin="5,0,0,0" MouseEnter="UIElement_OnMouseEnter" MouseLeave="UIElement_OnMouseLeave"/>
-                        <Button Click="BtnCreateFile_OnClick" ToolTip="Excel-Datei erstellen"  Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" HorizontalAlignment="Left" Margin="5,0,0,0" MouseEnter="UIElement_OnMouseEnter" MouseLeave="UIElement_OnMouseLeave">
+                        <Button Click="ChooseExcelFile_Click" ToolTip="{x:Static p:Resources.SettingsDialog_ToolTip_ChooseExcelFile}"  Content="&#xE8E5;" Foreground="White" FontSize="16" FontFamily="Segoe MDL2 Assets" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" HorizontalAlignment="Left" Margin="5,0,0,0" MouseEnter="UIElement_OnMouseEnter" MouseLeave="UIElement_OnMouseLeave"/>
+                        <Button Click="BtnCreateFile_OnClick" ToolTip="{x:Static p:Resources.SettingsDialog_ToolTip_CreateExcelFile}"  Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" HorizontalAlignment="Left" Margin="5,0,0,0" MouseEnter="UIElement_OnMouseEnter" MouseLeave="UIElement_OnMouseLeave">
                             <Button.Content>
                                 <Image  Source="../AddPageSegoeMDL2White.png" Width="18" Height="19" />
                             </Button.Content>
                         </Button>
-                        <!--<Image Source="../addfile.png" />-->
                     </StackPanel>
                 </Grid>
 
-
-
-                <!--Als Mail versenden-->
+                <!--Send as Mail-->
                 <Grid x:Name="MailPanel" Margin="0,20,0,0">
                     <Grid.RowDefinitions>
                         <RowDefinition />
@@ -294,13 +289,13 @@
                         <ColumnDefinition Width="2*"/>
                     </Grid.ColumnDefinitions>
 
-                    <TextBlock Grid.Row="0" Grid.Column="0" Text="Als Mail versenden"  FontSize="18" FontFamily="Segoe UI Light"  Foreground="White"/>
-                    
-                    <TextBlock Grid.Row="1" Grid.Column="0" Text="Sender" Foreground="White"/>
-                    <TextBox Grid.Row="2" Grid.Column="0" x:Name="TxtMailFrom" Text="Phillip.Kalusek@hotmail.de"  FontSize="16"   Background="#FF494747" BorderBrush="Transparent" SelectionOpacity="1" Foreground="White"  />
+                    <TextBlock Grid.Row="0" Grid.Column="0" Text="{x:Static p:Resources.SettingsDialog_Label_SendAsMail}"  FontSize="18" FontFamily="Segoe UI Light"  Foreground="White"/>
 
-                    <TextBlock Grid.Row="3" Grid.Column="0" Text="Empfänger" Foreground="White" Margin="0,10,0,0"/>
-                    <TextBox Grid.Row="4" Grid.Column="0" x:Name="TxtMailTo" Text="Phillip.Kalusek@hotmail.de"  FontSize="16"   Background="#FF494747" BorderBrush="Transparent" SelectionOpacity="1" Foreground="White"  />
+                    <TextBlock Grid.Row="1" Grid.Column="0" Text="{x:Static p:Resources.SettingsDialog_Label_MailsSender}" Foreground="White"/>
+                    <TextBox Grid.Row="2" Grid.Column="0" x:Name="TxtMailFrom"   FontSize="16"   Background="#FF494747" BorderBrush="Transparent" SelectionOpacity="1" Foreground="White"  />
+
+                    <TextBlock Grid.Row="3" Grid.Column="0" Text="{x:Static p:Resources.SettingsDialog_Label_MailsReciever}" Foreground="White" Margin="0,10,0,0"/>
+                    <TextBox Grid.Row="4" Grid.Column="0" x:Name="TxtMailTo"  FontSize="16"   Background="#FF494747" BorderBrush="Transparent" SelectionOpacity="1" Foreground="White"  />
                     <Button Grid.Row="4" Grid.Column="1" Click="BtnSendMail_OnClick" Content="&#xE89C;" Foreground="White" FontSize="16" FontFamily="Segoe MDL2 Assets" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" HorizontalAlignment="Left" Margin="5,0,0,0" MouseEnter="UIElement_OnMouseEnter" MouseLeave="UIElement_OnMouseLeave"/>
                 </Grid>
             </StackPanel>
@@ -324,7 +319,7 @@
                         </Style.Triggers>
                     </Style>
                 </StackPanel.Style>
-                <CheckBox Foreground="White" x:Name="CloseAfterSave" Margin="0,5,0,0" Unchecked="CloseAfterSave_OnChecked" Checked="CloseAfterSave_OnChecked" Content="Nach der Eingabe Programm schließen"/>
+                <CheckBox Foreground="White" x:Name="CloseAfterSave" Margin="0,5,0,0" Unchecked="CloseAfterSave_OnChecked" Checked="CloseAfterSave_OnChecked" Content="{x:Static p:Resources.SettingsDialog_Programm_CloseAfterSave}"/>
                 
             </StackPanel>
         </Grid>
@@ -335,7 +330,7 @@
                 <Button.Content>
                     <StackPanel Orientation="Horizontal" Margin="5,2,5,2" >
                         <TextBlock Text="&#xE74E;"  FontSize="14" FontFamily="Segoe MDL2 Assets" Foreground="#FF00A8DE" VerticalAlignment="Center" MouseEnter="UIElement_OnMouseEnter" MouseLeave="UIElement_OnMouseLeave"/>
-                        <TextBlock Text="Speichern" Foreground="White" VerticalAlignment="Center" Margin="5,0,0,0" MouseEnter="UIElement_OnMouseEnter" MouseLeave="UIElement_OnMouseLeave"/>
+                        <TextBlock Text="{x:Static p:Resources.SettingsDialog_Label_Save}" Foreground="White" VerticalAlignment="Center" Margin="5,0,0,0" MouseEnter="UIElement_OnMouseEnter" MouseLeave="UIElement_OnMouseLeave"/>
                     </StackPanel>
                 </Button.Content>
             </Button>

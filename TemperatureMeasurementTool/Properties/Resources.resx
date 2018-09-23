@@ -189,6 +189,60 @@
   <data name="MainWindow_ToolTip_Temperature_Warning" xml:space="preserve">
     <value>Temperatur über dem Limit!</value>
   </data>
+  <data name="SettingsDialog_Label_Content" xml:space="preserve">
+    <value>Inhalt</value>
+  </data>
+  <data name="SettingsDialog_Label_CreatePDFs" xml:space="preserve">
+    <value>PDFs erstellen</value>
+  </data>
+  <data name="SettingsDialog_Label_Employee" xml:space="preserve">
+    <value>Mitarbeiter</value>
+  </data>
+  <data name="SettingsDialog_Label_ErrorTextNoExcelFile" xml:space="preserve">
+    <value>Keine Exceldatei bekannt. \n Wählen Sie eine Datei aus oder erstellen Sie eine Neue.</value>
+  </data>
+  <data name="SettingsDialog_Label_File" xml:space="preserve">
+    <value>Datei</value>
+  </data>
+  <data name="SettingsDialog_Label_FileLocation" xml:space="preserve">
+    <value>Dateispeicherort</value>
+  </data>
+  <data name="SettingsDialog_Label_MailsReciever" xml:space="preserve">
+    <value>Empfänger</value>
+  </data>
+  <data name="SettingsDialog_Label_MailsSender" xml:space="preserve">
+    <value>Sender</value>
+  </data>
+  <data name="SettingsDialog_Label_OpenDoc" xml:space="preserve">
+    <value>Öffnen</value>
+  </data>
+  <data name="SettingsDialog_Label_PrintDoc" xml:space="preserve">
+    <value>Drucken</value>
+  </data>
+  <data name="SettingsDialog_Label_Program" xml:space="preserve">
+    <value>Programm</value>
+  </data>
+  <data name="SettingsDialog_Label_Save" xml:space="preserve">
+    <value>Speichern</value>
+  </data>
+  <data name="SettingsDialog_Label_SendAsMail" xml:space="preserve">
+    <value>Als E-Mail versenden</value>
+  </data>
+  <data name="SettingsDialog_Label_TemperatureInput" xml:space="preserve">
+    <value>Temperatureingabe</value>
+  </data>
+  <data name="SettingsDialog_Programm_CloseAfterSave" xml:space="preserve">
+    <value>Nach der Eingabe Programm schließen</value>
+  </data>
+  <data name="SettingsDialog_Title" xml:space="preserve">
+    <value>TMT Einstellungen</value>
+  </data>
+  <data name="SettingsDialog_ToolTip_ChooseExcelFile" xml:space="preserve">
+    <value>Excel-Datei auswählen</value>
+  </data>
+  <data name="SettingsDialog_ToolTip_CreateExcelFile" xml:space="preserve">
+    <value>Excel-Datei erstellen</value>
+  </data>
   <data name="Vacation" xml:space="preserve">
     <value>Urlaub</value>
   </data>
