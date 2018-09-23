@@ -60,5 +60,8 @@
     <Setting Name="CountryCode" Type="System.String" Scope="User">
       <Value Profile="(Default)">DE-HE</Value>
     </Setting>
+    <Setting Name="DateFormat" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">dd.MM.yyyy</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

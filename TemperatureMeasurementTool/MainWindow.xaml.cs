@@ -45,7 +45,7 @@ namespace TemperatureMeasurementTool
             TempInput.Focus();
             BorHinweis.Visibility = Visibility.Collapsed;
             //Todays Date is the initial/default value of the input value
-            DtpActualDate.Text = DateTime.Now.Date.ToString("dd.MM.yyyy");
+            DtpActualDate.Text = DateTime.Now.Date.ToString(Settings.Default.DateFormat);
 
             if (Settings.Default.AssignedUsersList != null)
             {
@@ -87,36 +87,18 @@ namespace TemperatureMeasurementTool
             }
             */
         }
-
-
-
-        /// <summary>
-        /// Closes the software
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void BtnClose_OnClick(object sender, RoutedEventArgs e)
+        
+        private void CloseWindow_OnClick(object sender, RoutedEventArgs e)
         {
             Close();
         }
 
-        /// <summary>
-        /// Mit dem Header kann man das Programm verschieben
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void GridHeader_OnMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        private void DragWindow_OnMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             DragMove();
         }
 
-        /// <summary>
-        /// Will be called in the starting process of the main window and sets its position on the bottom right
-        /// of the main desktop
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void MainWindow_OnLoaded(object sender, RoutedEventArgs e)
+        private void PositioningMainWindow_OnLoaded(object sender, RoutedEventArgs e)
         {
             var desktopWorkingArea = SystemParameters.WorkArea;
             Left = desktopWorkingArea.Right - Width;

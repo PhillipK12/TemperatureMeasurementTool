@@ -6,7 +6,7 @@
         xmlns:p="clr-namespace:TemperatureMeasurementTool.Properties"
         x:Class="TemperatureMeasurementTool.MainWindow"
         mc:Ignorable="d"
-        Title="{x:Static p:Resources.MainWindow_Title}" Height="439.774" Width="424.97" AllowsTransparency="True" WindowStyle="None" Icon="favicon2.ico" Loaded="MainWindow_OnLoaded">
+        Title="{x:Static p:Resources.MainWindow_Title}" Height="439.774" Width="424.97" AllowsTransparency="True" WindowStyle="None" Icon="favicon2.ico" Loaded="PositioningMainWindow_OnLoaded">
     <Window.Resources>
         <ResourceDictionary>
             <!-- Overwriting the default style of the ComboBox - dark theme -->
@@ -204,7 +204,7 @@
 
 
         <!--Header-->
-        <Grid x:Name="GridHeader" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" MouseLeftButtonDown="GridHeader_OnMouseLeftButtonDown" Background="#FF2C2C2C">
+        <Grid x:Name="GridHeader" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" MouseLeftButtonDown="DragWindow_OnMouseLeftButtonDown" Background="#FF2C2C2C">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
@@ -217,7 +217,7 @@
             <StackPanel Grid.Row="0" Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Right" >
                 <Button Content="&#xE72D;" Click="BtnOpenExport_OnClick"  FontSize="16" FontFamily="Segoe MDL2 Assets" HorizontalAlignment="Right" Foreground="White" VerticalAlignment="Center" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" MouseEnter="UIElement_OnMouseEnter" MouseLeave="UIElement_OnMouseLeave" Margin="0,0,5,0"/>
                 <Button  Content="&#xE713;" Click="BtnOpenSettings_OnClick" FontSize="14" FontFamily="Segoe MDL2 Assets" HorizontalAlignment="Right" Foreground="White" VerticalAlignment="Center" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" MouseEnter="UIElement_OnMouseEnter" MouseLeave="UIElement_OnMouseLeave"/>
-                <Button  Content="&#xE8BB;" Click="BtnClose_OnClick" FontSize="12" FontFamily="Segoe MDL2 Assets" HorizontalAlignment="Right" Foreground="White" VerticalAlignment="Center" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" MouseEnter="UIElement_OnMouseEnter" MouseLeave="UIElement_OnMouseLeave" Margin="5,0,5,0"/>
+                <Button  Content="&#xE8BB;" Click="CloseWindow_OnClick" FontSize="12" FontFamily="Segoe MDL2 Assets" HorizontalAlignment="Right" Foreground="White" VerticalAlignment="Center" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" MouseEnter="UIElement_OnMouseEnter" MouseLeave="UIElement_OnMouseLeave" Margin="5,0,5,0"/>
             </StackPanel>
         </Grid>
 
@@ -346,7 +346,7 @@
             <Border x:Name="BorHinweis" BorderThickness="1" VerticalAlignment="Center" BorderBrush="#6495ED" CornerRadius="5" Margin="50,0,0,0">
                 <StackPanel Orientation="Horizontal" Margin="20,5,20,5" >
                     <TextBlock Text="&#xE946;"  FontSize="16" FontFamily="Segoe MDL2 Assets" Foreground="#6495ED" VerticalAlignment="Center" />
-                    <TextBlock x:Name="TxtHinweis" VerticalAlignment="Top" Foreground="#6495ED"  Margin="10,0,0,0">Einstellungen gespeichert</TextBlock>
+                    <TextBlock x:Name="TxtHinweis" VerticalAlignment="Top" Foreground="#6495ED"  Margin="10,0,0,0"></TextBlock>
                 </StackPanel>
             </Border>
         </StackPanel>
