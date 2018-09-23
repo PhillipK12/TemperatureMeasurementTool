@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TemperatureMeasurementTool"
+        xmlns:p="clr-namespace:TemperatureMeasurementTool.Properties"
         mc:Ignorable="d"
         Title="{x:Static p:Resources.SettingsDialog_Title}" Height="462.536" Width="431.534" AllowsTransparency="True" WindowStyle="None" Icon="../favicon2.ico" WindowStartupLocation="CenterScreen">
     <Window.Background>
