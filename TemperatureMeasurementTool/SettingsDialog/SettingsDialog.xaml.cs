@@ -54,7 +54,7 @@ namespace TemperatureMeasurementTool
         private void Setup()
         {
             ToggleDatei.IsChecked = true;
-            CloseAfterSave.IsChecked = Settings.Default.IsCloseAfterSaveEnabled;
+            ChBxCloseAfterSave.IsChecked = Settings.Default.IsCloseAfterSaveEnabled;
             if (!string.IsNullOrWhiteSpace(Settings.Default.ExcelFilePath))
             {
                 var path = Settings.Default.ExcelFilePath;
@@ -226,6 +226,8 @@ namespace TemperatureMeasurementTool
             {
                 Settings.Default.AssignedUsersList.Add((string)item);
             }
+            Settings.Default.MailTransmitterAdress = TxtMailFrom.Text;
+            Settings.Default.IsCloseAfterSaveEnabled = ChBxCloseAfterSave.IsChecked == true ? true: false ;
             Settings.Default.Save();
             if (MainWindow != null)
             {
@@ -234,7 +236,6 @@ namespace TemperatureMeasurementTool
                 MainWindow.SettingsChanged();
             }
             Close();
-
         }
 
         private void BtnCreateFile_OnClick(object sender, RoutedEventArgs e)
@@ -264,10 +265,7 @@ namespace TemperatureMeasurementTool
                 e.Handled = false;
                 return;
             }
-
-            toggleButton.Background = Brushes.Transparent;
-
-
+            toggleButton.Background = Brushes.Transparent;            
             if (Equals(toggleButton, ToggleDatei))
             {
                 BordDatei.Visibility = Visibility.Visible;
@@ -301,7 +299,7 @@ namespace TemperatureMeasurementTool
             TxtNewEmployee.Focus();
         }
         
-        private void UIElement_OnMouseEnter(object sender, MouseEventArgs e)
+        private void AnimationForeground_OnMouseEnter(object sender, MouseEventArgs e)
         {
 
             if (sender is TextBlock block)
@@ -315,7 +313,7 @@ namespace TemperatureMeasurementTool
             }
         }
 
-        private void UIElement_OnMouseLeave(object sender, MouseEventArgs e)
+        private void AnimationForeground_OnMouseLeave(object sender, MouseEventArgs e)
         {
             if (sender is TextBlock block)
             {
@@ -328,15 +326,15 @@ namespace TemperatureMeasurementTool
             }
         }
 
-        private void ChooseExcelFile_Click(object sender, RoutedEventArgs e)
+        private void OpenExcelFileChooser_OnClick(object sender, RoutedEventArgs e)
         {
             _openFileDialog = new OpenFileDialog();
             _openFileDialog.Filter = "Excel Dateien (*.xlsx)|*.xlsx|All files (*.*)|*.*";
-            _openFileDialog.FileOk += ChooseExcelFile_Ok;
+            _openFileDialog.FileOk += ExcelFileChosen_OnOk;
             _openFileDialog.ShowDialog();
         }
 
-        private void ChooseExcelFile_Ok(object sender, CancelEventArgs e)
+        private void ExcelFileChosen_OnOk(object sender, CancelEventArgs e)
         {
             TbxFileConfigPath.Text = _openFileDialog.FileName;
             Settings.Default.ExcelFilePath = _openFileDialog.FileName;
@@ -350,11 +348,6 @@ namespace TemperatureMeasurementTool
                 var path = Path.GetFullPath(Settings.Default.ExcelFilePath);
                 Process.Start(path);
             }
-        }
-
-        private void CloseAfterSave_OnChecked(object sender, RoutedEventArgs e)
-        {
-            Settings.Default.IsCloseAfterSaveEnabled = ((CheckBox)sender).IsChecked == true;
         }
 
         private void BtnTempDown_OnClick(object sender, RoutedEventArgs e)
@@ -446,12 +439,12 @@ namespace TemperatureMeasurementTool
             {
                 From = new MailAddress(TxtMailFrom.Text),
                 To = {new MailAddress(TxtMailTo.Text)},
-                Subject = "Temperaturmessung Exceldatei Export",
+                Subject = p.Resources.SettingsDialog_SendingMail_Subject,
                 IsBodyHtml = true,
-                Body = "<span style='font-size: 12pt; font-family:Calibri; color: black;'>Im Anhang befinden sich die Temperaturmessungen</span>"
+                Body = p.Resources.SettingsDialog_SendingMail_Body
             };
             mailMessage.Attachments.Add(new Attachment(Settings.Default.ExcelFilePath));
-            var filename = Path.GetDirectoryName(Settings.Default.ExcelFilePath).Replace("\\", "/") + "/ExportExcelFileMessage.eml";
+            var filename = Path.GetDirectoryName(Settings.Default.ExcelFilePath).Replace("\\", "/") + "/" + p.Resources.SettingsDialog_SendingMail_MessageName;
 
             //save the MailMessage to the filesystem
             mailMessage.Save(filename);

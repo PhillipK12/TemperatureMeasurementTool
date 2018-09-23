@@ -349,7 +349,7 @@ namespace TemperatureMeasurementTool
                         }
                     }
                 }
-                if (isSaved) ShowInformationText("Eintrag erfolgreich abgespeichert");
+                if (isSaved) ShowInformationText(p.Resources.MainWindow_Message_SuccessfullyEntered);
                 if (Settings.Default.IsCloseAfterSaveEnabled) Close();
 
             }

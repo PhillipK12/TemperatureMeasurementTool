@@ -183,6 +183,9 @@
   <data name="MainWindow_Label_VacationTo" xml:space="preserve">
     <value>Urlaub bis</value>
   </data>
+  <data name="MainWindow_Message_SuccessfullyEntered" xml:space="preserve">
+    <value>Eintrag erfolgreich abgespeichert</value>
+  </data>
   <data name="MainWindow_Title" xml:space="preserve">
     <value>TMT Eingabe</value>
   </data>
@@ -236,6 +239,15 @@
   </data>
   <data name="SettingsDialog_Programm_CloseAfterSave" xml:space="preserve">
     <value>Nach der Eingabe Programm schließen</value>
+  </data>
+  <data name="SettingsDialog_SendingMail_Body" xml:space="preserve">
+    <value>&lt;span style='font-size: 12pt; font-family:Calibri; color: black;'&gt;Im Anhang befinden sich die Temperaturmessungen&lt;/span&gt;</value>
+  </data>
+  <data name="SettingsDialog_SendingMail_MessageName" xml:space="preserve">
+    <value>ExportExcelFileMessage.eml</value>
+  </data>
+  <data name="SettingsDialog_SendingMail_Subject" xml:space="preserve">
+    <value>Temperaturmessung Exceldatei Export</value>
   </data>
   <data name="SettingsDialog_Title" xml:space="preserve">
     <value>TMT Einstellungen</value>

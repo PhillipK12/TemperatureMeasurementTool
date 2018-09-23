@@ -259,6 +259,15 @@ namespace TemperatureMeasurementTool.Properties {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Eintrag erfolgreich abgespeichert ähnelt.
+        /// </summary>
+        public static string MainWindow_Message_SuccessfullyEntered {
+            get {
+                return ResourceManager.GetString("MainWindow_Message_SuccessfullyEntered", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die TMT Eingabe ähnelt.
         /// </summary>
         public static string MainWindow_Title {
@@ -417,6 +426,33 @@ namespace TemperatureMeasurementTool.Properties {
         public static string SettingsDialog_Programm_CloseAfterSave {
             get {
                 return ResourceManager.GetString("SettingsDialog_Programm_CloseAfterSave", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die &lt;span style=&apos;font-size: 12pt; font-family:Calibri; color: black;&apos;&gt;Im Anhang befinden sich die Temperaturmessungen&lt;/span&gt; ähnelt.
+        /// </summary>
+        public static string SettingsDialog_SendingMail_Body {
+            get {
+                return ResourceManager.GetString("SettingsDialog_SendingMail_Body", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die ExportExcelFileMessage.eml ähnelt.
+        /// </summary>
+        public static string SettingsDialog_SendingMail_MessageName {
+            get {
+                return ResourceManager.GetString("SettingsDialog_SendingMail_MessageName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Temperaturmessung Exceldatei Export ähnelt.
+        /// </summary>
+        public static string SettingsDialog_SendingMail_Subject {
+            get {
+                return ResourceManager.GetString("SettingsDialog_SendingMail_Subject", resourceCulture);
             }
         }
         
