@@ -10,6 +10,7 @@ using Nager.Date;
 using OfficeOpenXml;
 using OfficeOpenXml.Style;
 using TemperatureMeasurementTool.Properties;
+using p = TemperatureMeasurementTool.Properties;
 
 namespace TemperatureMeasurementTool
 {
@@ -118,32 +119,32 @@ namespace TemperatureMeasurementTool
                     if (firstrnd == tempToInt)
                     {
                         firsttemperaturlimit = firstrnd + "," +
-                                               (tempToSecondDigit == 0 ? "0" : rnd.Next(0, tempToSecondDigit).ToString()) + Properties.Resources.DegreeSymbol;
+                                               (tempToSecondDigit == 0 ? "0" : rnd.Next(0, tempToSecondDigit).ToString()) + p.Resources.DegreeSymbol;
                     }
                     else if (firstrnd < tempToInt && firstrnd > tempFromInt)
                     {
-                        firsttemperaturlimit = firstrnd + "," + rnd.Next(0, 9) + Properties.Resources.DegreeSymbol;
+                        firsttemperaturlimit = firstrnd + "," + rnd.Next(0, 9) + p.Resources.DegreeSymbol;
                     }
                     else if (firstrnd == tempFromInt)
                     {
                         firsttemperaturlimit = firstrnd + "," +
-                                               (tempFromSecondDigit == 0 ? "0" : rnd.Next(tempFromSecondDigit, 9).ToString()) + Properties.Resources.DegreeSymbol;
+                                               (tempFromSecondDigit == 0 ? "0" : rnd.Next(tempFromSecondDigit, 9).ToString()) + p.Resources.DegreeSymbol;
                     }
 
                     //Zweite Temperaturmessung
                     if (secondrnd == tempToInt)
                     {
                         secondtemperaturlimit = secondrnd + "," +
-                                               (tempToSecondDigit == 0 ? "0" : rnd.Next(0, tempToSecondDigit).ToString()) + Properties.Resources.DegreeSymbol;
+                                               (tempToSecondDigit == 0 ? "0" : rnd.Next(0, tempToSecondDigit).ToString()) + p.Resources.DegreeSymbol;
                     }
                     else if (secondrnd < tempToInt && secondrnd > tempFromInt)
                     {
-                        secondtemperaturlimit = secondrnd + "," + rnd.Next(0, 9) + Properties.Resources.DegreeSymbol;
+                        secondtemperaturlimit = secondrnd + "," + rnd.Next(0, 9) + p.Resources.DegreeSymbol;
                     }
                     else if (secondrnd == tempFromInt)
                     {
                         secondtemperaturlimit = secondrnd + "," +
-                                               (tempFromSecondDigit == 0 ? "0" : rnd.Next(tempFromSecondDigit, 9).ToString()) + Properties.Resources.DegreeSymbol;
+                                               (tempFromSecondDigit == 0 ? "0" : rnd.Next(tempFromSecondDigit, 9).ToString()) + p.Resources.DegreeSymbol;
                     }
 
 

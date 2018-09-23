@@ -403,6 +403,15 @@ namespace TemperatureMeasurementTool.Properties {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Einstellungen gespeichert ähnelt.
+        /// </summary>
+        public static string SettingsDialog_Message_SuccessfullySaved {
+            get {
+                return ResourceManager.GetString("SettingsDialog_Message_SuccessfullySaved", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Nach der Eingabe Programm schließen ähnelt.
         /// </summary>
         public static string SettingsDialog_Programm_CloseAfterSave {

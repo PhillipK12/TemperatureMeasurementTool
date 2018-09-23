@@ -231,6 +231,9 @@
   <data name="SettingsDialog_Label_TemperatureInput" xml:space="preserve">
     <value>Temperatureingabe</value>
   </data>
+  <data name="SettingsDialog_Message_SuccessfullySaved" xml:space="preserve">
+    <value>Einstellungen gespeichert</value>
+  </data>
   <data name="SettingsDialog_Programm_CloseAfterSave" xml:space="preserve">
     <value>Nach der Eingabe Programm schließen</value>
   </data>

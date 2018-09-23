@@ -22,28 +22,36 @@ using Button = System.Windows.Controls.Button;
 using CheckBox = System.Windows.Controls.CheckBox;
 using TextBox = System.Windows.Controls.TextBox;
 using Window = System.Windows.Window;
+using p = TemperatureMeasurementTool.Properties;
 
 namespace TemperatureMeasurementTool
 {
-    /// <summary>
-    /// Interaktionslogik für SettingsDialog.xaml
-    /// </summary>
+
     public partial class SettingsDialog : Window
     {
+        #region fields
         private bool _isSaved = true;
-
         private OpenFileDialog _openFileDialog;
-
         private string _previouseValueFrom;
         private string _previouseValueTo;
+        #endregion
+
+        #region properties
+        public MainWindow MainWindow { get; set; }
+        public Action<object, CancelEventArgs> FileOk { get; private set; }
+        #endregion
 
         public SettingsDialog()
         {
             InitializeComponent();
-            SetupSettings();
+            Setup();
         }
 
-        private void SetupSettings()
+        /// <summary>
+        /// Loads data from the settings puts them in the ui
+        /// checks if file path is correct
+        /// </summary>
+        private void Setup()
         {
             ToggleDatei.IsChecked = true;
             CloseAfterSave.IsChecked = Settings.Default.IsCloseAfterSaveEnabled;
@@ -84,16 +92,67 @@ namespace TemperatureMeasurementTool
                 LstAssignedEmployees.SelectedIndex = Settings.Default.IndexRecentSelectedEmployee;
             }
         }
-
-        public MainWindow MainWindow { get; set; }
-        public Action<object, CancelEventArgs> FileOk { get; private set; }
-
+        
         /// <summary>
-        /// Damit lässt sich das Fenster verschieben
+        /// Creates an empty excel file, file-format is xlsx with a header 
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void GridHeader_OnMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        /// <param name="fileDialog"></param>
+        private void InitializeExcelFile(SaveFileDialog fileDialog)
+        {
+            using (ExcelPackage excel = new ExcelPackage())
+            {
+                var excelWorksheet = excel.Workbook.Worksheets.Add(DateTime.Today.Year.ToString());
+                //var excelWorksheet = excel.Workbook.Worksheets[1]; //WTF? ARRAY STARTS WITH ONE?!?!?!?!? 
+                excelWorksheet.Cells["A1:G1"].LoadFromArrays(new List<string[]>() { new[] {
+                p.Resources.ExcelFile_TitleColumn_Date , 
+                        p.Resources.ExcelFile_TitleColumn_FirstTime,
+                        p.Resources.ExcelFile_TitleColumn_FirstTemp,
+                        p.Resources.ExcelFile_TitleColumn_FirstEmployee,
+                        p.Resources.ExcelFile_TitleColumn_SecondTime,
+                        p.Resources.ExcelFile_TitleColumn_SecondTemp,
+                        p.Resources.ExcelFile_TitleColumn_SecondEmployee,
+                    }
+        });
+                // Cells args are first row, first col, last row, last col
+                using (var rowRngHeader = excelWorksheet.Cells[1, 1, 1, 7])
+                {
+                    rowRngHeader.Style.Font.Name = "Segoe UI";
+                    rowRngHeader.Style.Font.Bold = true;
+                    rowRngHeader.Style.Font.Size = 12;
+                    rowRngHeader.Style.Border.BorderAround(ExcelBorderStyle.Thin);
+                }
+                excelWorksheet.Cells.AutoFitColumns();
+                var excelFile = new FileInfo(fileDialog.FileName);
+                excel.SaveAs(excelFile);
+            }
+        }
+        
+        /// <summary>
+        /// Gets called when there is no filepath to a valid excel file and vice versa if transmitted value is false
+        /// So a warning-text is in/visible and other settings get en/disabled
+        /// </summary>
+        /// <param name="value"></param>
+        public void NeedExcelFilePath(bool value)
+        {
+            if (!value && !string.IsNullOrWhiteSpace(Settings.Default.ExcelFilePath))
+            {
+                if (File.Exists(Settings.Default.ExcelFilePath))
+                {
+                    return;
+                }
+                Settings.Default.ExcelFilePath = string.Empty;
+            }
+            ToggleDatei.IsEnabled = !value;
+            ToggleAllgemein.IsEnabled = !value;
+            ToggleProgramm.IsEnabled = !value;
+            BtnPanelFileOperations.Visibility = !value ? Visibility.Visible : Visibility.Collapsed;
+            MailPanel.Visibility = !value ? Visibility.Visible : Visibility.Collapsed;
+            borWarning.Visibility = !value ? Visibility.Collapsed : Visibility.Visible;
+            Height = !value ? 660 : 400;
+        }
+
+        #region event methods
+        private void DragMoveSettingsDialog_OnMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             DragMove();
         }
@@ -132,12 +191,7 @@ namespace TemperatureMeasurementTool
             Marshal.FinalReleaseComObject(excelApp);
         }
 
-        /// <summary>
-        /// Schließt das Settings Fenster
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void BtnClose_OnClick(object sender, RoutedEventArgs e)
+        private void CloseSettingsDialog_OnClick(object sender, RoutedEventArgs e)
         {
             bool _ShouldClose = true;
             if (!_isSaved)
@@ -163,17 +217,10 @@ namespace TemperatureMeasurementTool
             if (_ShouldClose) Close();
         }
 
-        /// <summary>
-        /// Speicher alle Einstellungen
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void BtnSave_OnClick(object sender, RoutedEventArgs e)
+        private void SaveSettings_OnClick(object sender, RoutedEventArgs e)
         {
             Settings.Default.TemperatureLimitFrom = Convert.ToDecimal(TempInputFrom.Text, new NumberFormatInfo() { NumberDecimalSeparator = "," });
             Settings.Default.TemperatureLimitTo = Convert.ToDecimal(TempInputTo.Text, new NumberFormatInfo() { NumberDecimalSeparator = "," });
-            
-
             Settings.Default.AssignedUsersList.Clear();
             foreach(var item in LstAssignedEmployees.Items)
             {
@@ -183,7 +230,7 @@ namespace TemperatureMeasurementTool
             if (MainWindow != null)
             {
                 if (MainWindow.WindowState == WindowState.Minimized) MainWindow.WindowState = WindowState.Normal;
-                MainWindow.ShowInformationText("Einstellungen gespeichert");
+                MainWindow.ShowInformationText(p.Resources.SettingsDialog_Message_SuccessfullySaved);
                 MainWindow.SettingsChanged();
             }
             Close();
@@ -205,34 +252,9 @@ namespace TemperatureMeasurementTool
                 InitializeExcelFile(saveFileDialog);
                 TbxFileConfigPath.Text = saveFileDialog.FileName;
                 Settings.Default.ExcelFilePath = saveFileDialog.FileName;
-                BtnSave_OnClick(BtnSaveSettings, null);
+                SaveSettings_OnClick(BtnSaveSettings, null);
             }
         }
-
-
-        private void InitializeExcelFile(SaveFileDialog fileDialog)
-        {
-            using (ExcelPackage excel = new ExcelPackage())
-            {
-                var calcYear = DateTime.Today.Year;
-                excel.Workbook.Worksheets.Add(calcYear.ToString());
-                // Target a worksheet
-                var excelWorksheet = excel.Workbook.Worksheets[1]; //WHAT THE FUCK? WHY DOES THAT ARRAY STARTS WITH ONE?!?!?!?!?
-                excelWorksheet.Cells["A1:G1"].LoadFromArrays(new List<string[]>() { new[] { "Datum", "1. Zeit", "1. Temperatur", "Kürzel", "2. Zeit", "2.Temperatur", "Kürzel" } });
-                // Cells args are first row, first col, last row, last col
-                using (var rowRngHeader = excelWorksheet.Cells[1, 1, 1, 7])
-                {
-                    rowRngHeader.Style.Font.Name = "Segoe UI";
-                    rowRngHeader.Style.Font.Bold = true;
-                    rowRngHeader.Style.Font.Size = 12;
-                    rowRngHeader.Style.Border.BorderAround(ExcelBorderStyle.Thin);
-                }
-                excelWorksheet.Cells.AutoFitColumns();
-                var excelFile = new FileInfo(fileDialog.FileName);
-                excel.SaveAs(excelFile);
-            }
-        }
-
 
         private void ToggleMenu_OnChecked(object sender, RoutedEventArgs e)
         {
@@ -278,26 +300,7 @@ namespace TemperatureMeasurementTool
             TxtNewEmployee.Text = string.Empty;
             TxtNewEmployee.Focus();
         }
-
-        public void NeedExcelFilePath(bool value)
-        {
-            if (!value && !string.IsNullOrWhiteSpace(Settings.Default.ExcelFilePath))
-            {
-                if (File.Exists(Settings.Default.ExcelFilePath))
-                {
-                    return;
-                }
-                Settings.Default.ExcelFilePath = string.Empty;
-            }
-            ToggleDatei.IsEnabled = !value;
-            ToggleAllgemein.IsEnabled = !value;
-            ToggleProgramm.IsEnabled = !value;
-            BtnPanelFileOperations.Visibility = !value ? Visibility.Visible : Visibility.Collapsed;
-            MailPanel.Visibility = !value ? Visibility.Visible : Visibility.Collapsed;
-            borWarning.Visibility = !value ? Visibility.Collapsed : Visibility.Visible;
-            Height = !value ? 660 : 400;
-        }
-
+        
         private void UIElement_OnMouseEnter(object sender, MouseEventArgs e)
         {
 
@@ -436,8 +439,7 @@ namespace TemperatureMeasurementTool
         {
             LstAssignedEmployees.Items.Remove(LstAssignedEmployees.SelectedItem);
         }
-
-       
+               
         private void BtnSendMail_OnClick(object sender, RoutedEventArgs e)
         {
             var mailMessage = new MailMessage
@@ -502,5 +504,6 @@ namespace TemperatureMeasurementTool
             excelApp.Quit();
             Marshal.FinalReleaseComObject(excelApp);
         }
+        #endregion
     }
 }

@@ -19,7 +19,7 @@
         </Grid.RowDefinitions>
 
         <!--Header-->
-        <Grid x:Name="GridHeader" Grid.Row="0" MouseLeftButtonDown="GridHeader_OnMouseLeftButtonDown" Background="#FF2C2C2C">
+        <Grid x:Name="GridHeader" Grid.Row="0" MouseLeftButtonDown="DragMoveSettingsDialog_OnMouseLeftButtonDown" Background="#FF2C2C2C">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
@@ -29,7 +29,7 @@
                 <Image Source="../favicon2.ico" Width="18" Height="18" Margin="5,0,5,0"/>
                 <TextBlock Text="{x:Static p:Resources.SettingsDialog_Title}" FontSize="14" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White"/>
             </StackPanel>
-            <Button  Grid.Row="0" Grid.Column="2" Content="&#xE8BB;" Click="BtnClose_OnClick" FontSize="12" FontFamily="Segoe MDL2 Assets" HorizontalAlignment="Right" Foreground="White" VerticalAlignment="Center" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" Margin="5,0,10,0"  MouseEnter="UIElement_OnMouseEnter" MouseLeave="UIElement_OnMouseLeave" />
+            <Button  Grid.Row="0" Grid.Column="2" Content="&#xE8BB;" Click="CloseSettingsDialog_OnClick" FontSize="12" FontFamily="Segoe MDL2 Assets" HorizontalAlignment="Right" Foreground="White" VerticalAlignment="Center" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" Margin="5,0,10,0"  MouseEnter="UIElement_OnMouseEnter" MouseLeave="UIElement_OnMouseLeave" />
 
         </Grid>
 
@@ -327,7 +327,7 @@
 
         <!--Footer-->
         <StackPanel   Grid.Row="2"  Background="#FF2C2C2C">
-            <Button Click="BtnSave_OnClick" x:Name="BtnSaveSettings" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" Margin="30,5,10,5" Height="32"  BorderBrush="#FF00A8DE" HorizontalAlignment="Left">
+            <Button Click="SaveSettings_OnClick" x:Name="BtnSaveSettings" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" Margin="30,5,10,5" Height="32"  BorderBrush="#FF00A8DE" HorizontalAlignment="Left">
                 <Button.Content>
                     <StackPanel Orientation="Horizontal" Margin="5,2,5,2" >
                         <TextBlock Text="&#xE74E;"  FontSize="14" FontFamily="Segoe MDL2 Assets" Foreground="#FF00A8DE" VerticalAlignment="Center" MouseEnter="UIElement_OnMouseEnter" MouseLeave="UIElement_OnMouseLeave"/>

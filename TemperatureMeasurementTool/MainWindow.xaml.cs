@@ -10,6 +10,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using OfficeOpenXml;
 using TemperatureMeasurementTool.Properties;
+using p = TemperatureMeasurementTool.Properties;
 using Timer = System.Timers.Timer;
 using System.Windows.Controls.Primitives;
 using Nager.Date;
@@ -200,13 +201,13 @@ namespace TemperatureMeasurementTool
                     actWorksheet = excelFile.Workbook.Worksheets.Add(pickedDate.Year.ToString());
                     excelFile.Workbook.Worksheets.MoveToStart(actWorksheet.Index);
                     actWorksheet.Cells["A1:G1"].LoadFromArrays(new List<string[]>() { new[] {
-                        Properties.Resources.ExcelFile_TitleColumn_Date , 
-                        Properties.Resources.ExcelFile_TitleColumn_FirstTime,
-                        Properties.Resources.ExcelFile_TitleColumn_FirstTemp,
-                        Properties.Resources.ExcelFile_TitleColumn_FirstEmployee,
-                        Properties.Resources.ExcelFile_TitleColumn_SecondTime,
-                        Properties.Resources.ExcelFile_TitleColumn_SecondTemp,
-                        Properties.Resources.ExcelFile_TitleColumn_SecondEmployee,
+                       p.Resources.ExcelFile_TitleColumn_Date , 
+                       p.Resources.ExcelFile_TitleColumn_FirstTime,
+                       p.Resources.ExcelFile_TitleColumn_FirstTemp,
+                       p.Resources.ExcelFile_TitleColumn_FirstEmployee,
+                       p.Resources.ExcelFile_TitleColumn_SecondTime,
+                       p.Resources.ExcelFile_TitleColumn_SecondTemp,
+                       p.Resources.ExcelFile_TitleColumn_SecondEmployee,
                     } });
                     // Cells args are first row, first col, last row, last col
                     using (var rowRngHeader = actWorksheet.Cells[1, 1, 1, 7])
@@ -243,7 +244,7 @@ namespace TemperatureMeasurementTool
                                 //Wenn der fehlende Eintrag ein Feiertag war
                                 if (DateSystem.IsOfficialPublicHolidayByCounty(nextdate, CountryCode.DE, Settings.Default.CountryCode))
                                 {
-                                    Text = Properties.Resources.Holiday;
+                                    Text = p.Resources.Holiday;
                                     actWorksheet.Cells[$"B{rowCount}:G{rowCount}"].Merge = true;
                                     actWorksheet.Cells[$"B{rowCount}"].Value = Text;
                                     actWorksheet.Cells[$"B{rowCount}"].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
@@ -251,7 +252,7 @@ namespace TemperatureMeasurementTool
                                 //wenn der fehlende Eintrag ein Tag des Wochenende ist
                                 else if (nextdate.DayOfWeek == DayOfWeek.Sunday || nextdate.DayOfWeek == DayOfWeek.Saturday)
                                 {
-                                    Text = Properties.Resources.Weekend;
+                                    Text = p.Resources.Weekend;
                                     actWorksheet.Cells[$"B{rowCount}:G{rowCount}"].Merge = true;
                                     actWorksheet.Cells[$"B{rowCount}"].Value = Text;
                                     actWorksheet.Cells[$"B{rowCount}"].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
@@ -290,7 +291,7 @@ namespace TemperatureMeasurementTool
                     {
                         rowCount = ++rowCount;
                         actWorksheet.Cells["A" + rowCount].Value = dtFrom.ToShortDateString();
-                        string Text = string.IsNullOrWhiteSpace(VacationDescriptionInput.Text) ? Properties.Resources.Vacation : VacationDescriptionInput.Text;
+                        string Text = string.IsNullOrWhiteSpace(VacationDescriptionInput.Text) ? p.Resources.Vacation : VacationDescriptionInput.Text;
                         actWorksheet.Cells[$"B{rowCount}:G{rowCount}"].Merge = true;
                         actWorksheet.Cells[$"B{rowCount}"].Value = Text;
                         actWorksheet.Cells[$"B{rowCount}"].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
@@ -307,7 +308,7 @@ namespace TemperatureMeasurementTool
                         {
                             actWorksheet.Cells["E" + rowCount + ":G" + rowCount].LoadFromArrays(new List<string[]>()
                                 {
-                                    new[] {TimePicker.GetValueAsString(), TempInput.Text + Properties.Resources.DegreeSymbol, LstAssignedEmployees.Text}
+                                    new[] {TimePicker.GetValueAsString(), TempInput.Text + p.Resources.DegreeSymbol, LstAssignedEmployees.Text}
                                 });
                             edited = true;
                         }
@@ -319,7 +320,7 @@ namespace TemperatureMeasurementTool
                         {
                             new[]
                             {
-                                DtpActualDate.Text, TimePicker.GetValueAsString(), TempInput.Text + Properties.Resources.DegreeSymbol,
+                                DtpActualDate.Text, TimePicker.GetValueAsString(), TempInput.Text + p.Resources.DegreeSymbol,
                                 LstAssignedEmployees.Text
                             }
                         });
@@ -334,7 +335,7 @@ namespace TemperatureMeasurementTool
                 }
                 catch (InvalidOperationException ee)
                 {
-                    var result = MessageBox.Show(Properties.Resources.ErrorMessageExcelFileIsStillOpen + "\n" + Properties.Resources.ErrorMessage + ": " + ee.Message, Properties.Resources.ErrorMessageTitle, MessageBoxButton.OKCancel, MessageBoxImage.Error, MessageBoxResult.Cancel);
+                    var result = MessageBox.Show(p.Resources.ErrorMessageExcelFileIsStillOpen + "\n" + p.Resources.ErrorMessage + ": " + ee.Message, p.Resources.ErrorMessageTitle, MessageBoxButton.OKCancel, MessageBoxImage.Error, MessageBoxResult.Cancel);
                     while (result != MessageBoxResult.Cancel && !isSaved)
                     {
                         try
@@ -344,7 +345,7 @@ namespace TemperatureMeasurementTool
                         }
                         catch (InvalidOperationException)
                         {
-                            result = MessageBox.Show(Properties.Resources.ErrorMessageExcelFileIsStillOpen + "\n" + Properties.Resources.ErrorMessage + ": " + ee.Message, Properties.Resources.ErrorMessageTitle, MessageBoxButton.OKCancel, MessageBoxImage.Error, MessageBoxResult.Cancel);
+                            result = MessageBox.Show(p.Resources.ErrorMessageExcelFileIsStillOpen + "\n" + p.Resources.ErrorMessage + ": " + ee.Message, p.Resources.ErrorMessageTitle, MessageBoxButton.OKCancel, MessageBoxImage.Error, MessageBoxResult.Cancel);
                         }
                     }
                 }
