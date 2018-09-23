@@ -153,6 +153,42 @@
   <data name="Holiday" xml:space="preserve">
     <value>Feiertag</value>
   </data>
+  <data name="MainWindow_EnterVacation" xml:space="preserve">
+    <value>Urlaub eintragen</value>
+  </data>
+  <data name="MainWindow_Header_Title" xml:space="preserve">
+    <value>TMT</value>
+  </data>
+  <data name="MainWindow_Label_AssignedUser" xml:space="preserve">
+    <value>Bearbeitender Mitarbeiter</value>
+  </data>
+  <data name="MainWindow_Label_Date" xml:space="preserve">
+    <value>Datum</value>
+  </data>
+  <data name="MainWindow_Label_Done" xml:space="preserve">
+    <value>Fertig</value>
+  </data>
+  <data name="MainWindow_Label_Temperature" xml:space="preserve">
+    <value>Temperatureingabe</value>
+  </data>
+  <data name="MainWindow_Label_Time" xml:space="preserve">
+    <value>Zeitangabe</value>
+  </data>
+  <data name="MainWindow_Label_VacationDescription" xml:space="preserve">
+    <value>Beschreibung</value>
+  </data>
+  <data name="MainWindow_Label_VacationFrom" xml:space="preserve">
+    <value>Urlaub von</value>
+  </data>
+  <data name="MainWindow_Label_VacationTo" xml:space="preserve">
+    <value>Urlaub bis</value>
+  </data>
+  <data name="MainWindow_Title" xml:space="preserve">
+    <value>TMT Eingabe</value>
+  </data>
+  <data name="MainWindow_ToolTip_Temperature_Warning" xml:space="preserve">
+    <value>Temperatur über dem Limit!</value>
+  </data>
   <data name="Vacation" xml:space="preserve">
     <value>Urlaub</value>
   </data>

@@ -169,6 +169,114 @@ namespace TemperatureMeasurementTool.Properties {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Urlaub eintragen ähnelt.
+        /// </summary>
+        public static string MainWindow_EnterVacation {
+            get {
+                return ResourceManager.GetString("MainWindow_EnterVacation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die TMT ähnelt.
+        /// </summary>
+        public static string MainWindow_Header_Title {
+            get {
+                return ResourceManager.GetString("MainWindow_Header_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Bearbeitender Mitarbeiter ähnelt.
+        /// </summary>
+        public static string MainWindow_Label_AssignedUser {
+            get {
+                return ResourceManager.GetString("MainWindow_Label_AssignedUser", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Datum ähnelt.
+        /// </summary>
+        public static string MainWindow_Label_Date {
+            get {
+                return ResourceManager.GetString("MainWindow_Label_Date", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Fertig ähnelt.
+        /// </summary>
+        public static string MainWindow_Label_Done {
+            get {
+                return ResourceManager.GetString("MainWindow_Label_Done", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Temperatureingabe ähnelt.
+        /// </summary>
+        public static string MainWindow_Label_Temperature {
+            get {
+                return ResourceManager.GetString("MainWindow_Label_Temperature", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Zeitangabe ähnelt.
+        /// </summary>
+        public static string MainWindow_Label_Time {
+            get {
+                return ResourceManager.GetString("MainWindow_Label_Time", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Beschreibung ähnelt.
+        /// </summary>
+        public static string MainWindow_Label_VacationDescription {
+            get {
+                return ResourceManager.GetString("MainWindow_Label_VacationDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Urlaub von ähnelt.
+        /// </summary>
+        public static string MainWindow_Label_VacationFrom {
+            get {
+                return ResourceManager.GetString("MainWindow_Label_VacationFrom", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Urlaub bis ähnelt.
+        /// </summary>
+        public static string MainWindow_Label_VacationTo {
+            get {
+                return ResourceManager.GetString("MainWindow_Label_VacationTo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die TMT Eingabe ähnelt.
+        /// </summary>
+        public static string MainWindow_Title {
+            get {
+                return ResourceManager.GetString("MainWindow_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Temperatur über dem Limit! ähnelt.
+        /// </summary>
+        public static string MainWindow_ToolTip_Temperature_Warning {
+            get {
+                return ResourceManager.GetString("MainWindow_ToolTip_Temperature_Warning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Urlaub ähnelt.
         /// </summary>
         public static string Vacation {

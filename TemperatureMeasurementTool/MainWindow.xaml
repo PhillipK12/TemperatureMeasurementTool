@@ -6,10 +6,10 @@
         xmlns:p="clr-namespace:TemperatureMeasurementTool.Properties"
         x:Class="TemperatureMeasurementTool.MainWindow"
         mc:Ignorable="d"
-        Title="TMT Eingabe" Height="439.774" Width="424.97" AllowsTransparency="True" WindowStyle="None" Icon="favicon2.ico" Loaded="MainWindow_OnLoaded">
+        Title="{x:Static p:Resources.MainWindow_Title}" Height="439.774" Width="424.97" AllowsTransparency="True" WindowStyle="None" Icon="favicon2.ico" Loaded="MainWindow_OnLoaded">
     <Window.Resources>
         <ResourceDictionary>
-
+            <!-- Overwriting the default style of the ComboBox - dark theme -->
             <ControlTemplate x:Key="ComboBoxToggleButton" TargetType="ToggleButton">
                 <Grid>
                     <Grid.ColumnDefinitions>
@@ -212,7 +212,7 @@
             </Grid.ColumnDefinitions>
             <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal" Margin="5">
                 <Image Source="favicon2.ico" Width="18" Height="18" Margin="5,0,5,0" ToolTip="{x:Static p:Resources.Version}"/>
-                <TextBlock Text="TMT" FontSize="14" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White"/>
+                <TextBlock Text="{x:Static p:Resources.MainWindow_Header_Title}" FontSize="14" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White"/>
             </StackPanel>
             <StackPanel Grid.Row="0" Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Right" >
                 <Button Content="&#xE72D;" Click="BtnOpenExport_OnClick"  FontSize="16" FontFamily="Segoe MDL2 Assets" HorizontalAlignment="Right" Foreground="White" VerticalAlignment="Center" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" MouseEnter="UIElement_OnMouseEnter" MouseLeave="UIElement_OnMouseLeave" Margin="0,0,5,0"/>
@@ -248,7 +248,7 @@
                 <StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <TextBlock  Text="&#xED28;" x:Name="symbolVacation" FontSize="14" Foreground="#FF00A8DE" FontFamily="Segoe MDL2 Assets" VerticalAlignment="Center"  Margin="5" />
-                        <TextBlock Text="Urlaub eintragen" x:Name="labelVacation" FontSize="14" Foreground="White" VerticalAlignment="Center"  MouseEnter="UIElement_OnMouseEnter" MouseLeave="UIElement_OnMouseLeave"/>
+                        <TextBlock Text="{x:Static p:Resources.MainWindow_EnterVacation}" x:Name="labelVacation" FontSize="14" Foreground="White" VerticalAlignment="Center"  MouseEnter="UIElement_OnMouseEnter" MouseLeave="UIElement_OnMouseLeave"/>
                     </StackPanel>
                     <Border x:Name="BordVacation" BorderBrush="#FF00A8DE" BorderThickness="2" Width="80" HorizontalAlignment="Stretch"  Visibility="Hidden" />
                 </StackPanel>
@@ -281,28 +281,28 @@
             </Grid.RowDefinitions>
 
             <!--Datum-->
-            <TextBlock Grid.Row="0" Grid.Column="0" Text="Datum" Foreground="White" FontSize="14"/>
+            <TextBlock Grid.Row="0" Grid.Column="0" Text="{x:Static p:Resources.MainWindow_Label_Date}" Foreground="White" FontSize="14"/>
             <DatePicker  x:Name="DtpActualDate" FontSize="18" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" BorderThickness="0" Style="{DynamicResource CustomDatePickerStyle}"/>
 
             <!--Zeitangabe-->
-            <TextBlock Grid.Row="2" Grid.Column="0" Text="Zeitangabe" FontSize="14" VerticalAlignment="Bottom" Foreground="White" Margin="0,30,0,0"/>
+            <TextBlock Grid.Row="2" Grid.Column="0" Text="{x:Static p:Resources.MainWindow_Label_Time}" FontSize="14" VerticalAlignment="Bottom" Foreground="White" Margin="0,30,0,0"/>
             <timePickerInput:TimePicker Grid.Row="3" Grid.Column="0" x:Name="TimePicker"/>
 
             <!--Temperatur-->
-            <TextBlock Grid.Row="2" Grid.Column="1" Text="Temperatureingabe" FontSize="14" Foreground="White" Margin="0,30,0,0"/>
+            <TextBlock Grid.Row="2" Grid.Column="1" Text="{x:Static p:Resources.MainWindow_Label_Temperature}" FontSize="14" Foreground="White" Margin="0,30,0,0"/>
             <WrapPanel  Grid.Row="3" Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center" >
                 <Border x:Name="borTemp" BorderBrush="Transparent" BorderThickness="2">
                     <WrapPanel Orientation="Horizontal" VerticalAlignment="Center">
                         <Button Click="BtnTempDown_OnClick" Content="&#xECC9;" Foreground="White" FontSize="16" FontFamily="Segoe MDL2 Assets" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" MouseEnter="UIElement_OnMouseEnter" MouseLeave="UIElement_OnMouseLeave"/>
                         <TextBox x:Name="TempInput" PreviewTextInput="Temperaturinput_OnPreviewTextInput"  TextAlignment="Center" MinWidth="80" FontSize="18" Background="#FF494747" BorderBrush="Transparent" SelectionOpacity="1" Foreground="White" TextChanged="TempInput_OnTextChanged"/>
                         <Button Click="BtnTempUp_OnClick" Content="&#xECC8;" Foreground="White" FontSize="16" FontFamily="Segoe MDL2 Assets" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" MouseEnter="UIElement_OnMouseEnter" MouseLeave="UIElement_OnMouseLeave"/>
-                        <TextBlock x:Name="TxtWarning" Text="&#xE7BA;" FontSize="18" ToolTip="Temperatur über dem Limit!" FontFamily="Segoe MDL2 Assets" Foreground="Red" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="8,0,8,0" Visibility="Hidden"/>
+                        <TextBlock x:Name="TxtWarning" Text="&#xE7BA;" FontSize="18" ToolTip="{x:Static p:Resources.MainWindow_ToolTip_Temperature_Warning}" FontFamily="Segoe MDL2 Assets" Foreground="Red" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="8,0,8,0" Visibility="Hidden"/>
                     </WrapPanel>
                 </Border>
             </WrapPanel>
 
             <!--AssignedEmployeeShortcut-->
-            <TextBlock Grid.Row="4" Grid.Column="0" Text="Bearbeitender Mitarbeiter" FontSize="14" Foreground="White" Margin="0,30,0,0"/>
+            <TextBlock Grid.Row="4" Grid.Column="0" Text="{x:Static p:Resources.MainWindow_Label_AssignedUser}" FontSize="14" Foreground="White" Margin="0,30,0,0"/>
             <ComboBox x:Name="LstAssignedEmployees" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" FontSize="18" Style="{StaticResource VoidwalkerDarkComboBox}" />
 
         </Grid>
@@ -322,12 +322,17 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
 
-            <!--Datum-->
-            <TextBlock Grid.Row="0" Grid.Column="0" Text="Urlaub von" Foreground="White" FontSize="14"/>
+            <!--Vacation From-->
+            <TextBlock Grid.Row="0" Grid.Column="0" Text="{x:Static p:Resources.MainWindow_Label_VacationFrom}" Foreground="White" FontSize="14" Margin="0,15,0,0"/>
             <DatePicker  x:Name="DtpVacationFromDate" FontSize="18" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" BorderThickness="0" Style="{DynamicResource CustomDatePickerStyle}"/>
-            
-            <TextBlock Grid.Row="2" Grid.Column="0" Text="Urlaub Bis" Foreground="White" FontSize="14"/>
+
+            <!--Vacation To-->
+            <TextBlock Grid.Row="2" Grid.Column="0" Text="{x:Static p:Resources.MainWindow_Label_VacationTo}" Foreground="White" FontSize="14" Margin="0,15,0,0"/>
             <DatePicker  x:Name="DtpVacationToDate" FontSize="18" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" BorderThickness="0" Style="{DynamicResource CustomDatePickerStyle}"/>
+
+            <!--Vacation Description-->
+            <TextBlock Grid.Row="4" Grid.Column="0" Text="{x:Static p:Resources.MainWindow_Label_VacationDescription}" Foreground="White"  FontSize="14"  Margin="0,15,0,0"/>
+            <TextBox Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" x:Name="VacationDescriptionInput"  FontSize="16"   Background="#FF494747" BorderBrush="Transparent" SelectionOpacity="1" Foreground="White"  />
         </Grid>
         
         <!--Footer-->
@@ -335,7 +340,7 @@
             <Button Click="BtnDone_OnClick" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" Margin="50,10,0,10" Height="32"  BorderBrush="#FF00A8DE" HorizontalAlignment="Left"  MouseEnter="UIElement_OnMouseEnter" MouseLeave="UIElement_OnMouseLeave">
                 <StackPanel Orientation="Horizontal" Margin="5,2,5,2" >
                     <TextBlock Text="&#xE73E;"  FontSize="14" FontFamily="Segoe MDL2 Assets" Foreground="#FF00A8DE" VerticalAlignment="Center"/>
-                    <TextBlock Text="Fertig" Foreground="White" VerticalAlignment="Center" Margin="5,0,0,0"/>
+                    <TextBlock Text="{x:Static p:Resources.MainWindow_Label_Done}" Foreground="White" VerticalAlignment="Center" Margin="5,0,0,0"/>
                 </StackPanel>
             </Button>
             <Border x:Name="BorHinweis" BorderThickness="1" VerticalAlignment="Center" BorderBrush="#6495ED" CornerRadius="5" Margin="50,0,0,0">

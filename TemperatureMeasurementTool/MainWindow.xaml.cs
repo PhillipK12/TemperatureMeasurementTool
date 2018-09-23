@@ -275,7 +275,7 @@ namespace TemperatureMeasurementTool
                     {
                         rowCount = ++rowCount;
                         actWorksheet.Cells["A" + rowCount].Value = dtFrom.ToShortDateString();
-                        string Text = Properties.Resources.Vacation;
+                        string Text = string.IsNullOrWhiteSpace(VacationDescriptionInput.Text) ? Properties.Resources.Vacation : VacationDescriptionInput.Text;
                         actWorksheet.Cells[$"B{rowCount}:G{rowCount}"].Merge = true;
                         actWorksheet.Cells[$"B{rowCount}"].Value = Text;
                         actWorksheet.Cells[$"B{rowCount}"].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
