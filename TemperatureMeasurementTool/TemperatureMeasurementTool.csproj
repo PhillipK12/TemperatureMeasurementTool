@@ -134,17 +134,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="favicon.ico" />
-    <Resource Include="favicon.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="AddPageSegoeMDL2White.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="favicon2.ico" />
+    <Resource Include="favicon.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="favicon2.png" />
+    <Resource Include="favicon.png" />
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="Microsoft.Office.Core">

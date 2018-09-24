@@ -6,7 +6,7 @@
         xmlns:p="clr-namespace:TemperatureMeasurementTool.Properties"
         x:Class="TemperatureMeasurementTool.MainWindow"
         mc:Ignorable="d"
-        Title="{x:Static p:Resources.MainWindow_Title}" Height="439.774" Width="424.97" AllowsTransparency="True" WindowStyle="None" Icon="favicon2.ico" Loaded="PositioningMainWindow_OnLoaded">
+        Title="{x:Static p:Resources.MainWindow_Title}" Height="439.774" Width="424.97" AllowsTransparency="True" WindowStyle="None" Icon="favicon.ico" Loaded="PositioningMainWindow_OnLoaded">
     <Window.Resources>
         <ResourceDictionary>
             <!-- Overwriting the default style of the ComboBox - dark theme -->
@@ -211,7 +211,7 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal" Margin="5">
-                <Image Source="favicon2.ico" Width="18" Height="18" Margin="5,0,5,0" ToolTip="{x:Static p:Resources.Version}"/>
+                <Image Source="favicon.ico" Width="18" Height="18" Margin="5,0,5,0" ToolTip="{x:Static p:Resources.Version}"/>
                 <TextBlock Text="{x:Static p:Resources.MainWindow_Header_Title}" FontSize="14" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White"/>
             </StackPanel>
             <StackPanel Grid.Row="0" Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Right" >

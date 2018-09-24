@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:TemperatureMeasurementTool"
         xmlns:p="clr-namespace:TemperatureMeasurementTool.Properties"
         mc:Ignorable="d"
-        Title="{x:Static p:Resources.SettingsDialog_Title}" Height="462.536" Width="431.534" AllowsTransparency="True" WindowStyle="None" Icon="../favicon2.ico" WindowStartupLocation="CenterScreen">
+        Title="{x:Static p:Resources.SettingsDialog_Title}" Height="462.536" Width="431.534" AllowsTransparency="True" WindowStyle="None" Icon="../favicon.ico" WindowStartupLocation="CenterScreen">
     <Window.Background>
         <SolidColorBrush Color="#FF2C2C2C" Opacity="0.9"/>
     </Window.Background>
@@ -26,7 +26,7 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" Margin="5">
-                <Image Source="../favicon2.ico" Width="18" Height="18" Margin="5,0,5,0"/>
+                <Image Source="../favicon.ico" Width="18" Height="18" Margin="5,0,5,0"/>
                 <TextBlock Text="{x:Static p:Resources.SettingsDialog_Title}" FontSize="14" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White"/>
             </StackPanel>
             <Button  Grid.Row="0" Grid.Column="2" Content="&#xE8BB;" Click="CloseSettingsDialog_OnClick" FontSize="12" FontFamily="Segoe MDL2 Assets" HorizontalAlignment="Right" Foreground="White" VerticalAlignment="Center" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" Margin="5,0,10,0"  MouseEnter="AnimationForeground_OnMouseEnter" MouseLeave="AnimationForeground_OnMouseLeave" />
