@@ -198,26 +198,7 @@ namespace TemperatureMeasurementTool
                 var actWorksheet = excelFile.Workbook.Worksheets.FirstOrDefault(a => a.Name.Equals(pickedDate.Year.ToString()));
                 if (actWorksheet == null)
                 {
-                    actWorksheet = excelFile.Workbook.Worksheets.Add(pickedDate.Year.ToString());
-                    excelFile.Workbook.Worksheets.MoveToStart(actWorksheet.Index);
-                    actWorksheet.Cells["A1:G1"].LoadFromArrays(new List<string[]>() { new[] {
-                       p.Resources.ExcelFile_TitleColumn_Date , 
-                       p.Resources.ExcelFile_TitleColumn_FirstTime,
-                       p.Resources.ExcelFile_TitleColumn_FirstTemp,
-                       p.Resources.ExcelFile_TitleColumn_FirstEmployee,
-                       p.Resources.ExcelFile_TitleColumn_SecondTime,
-                       p.Resources.ExcelFile_TitleColumn_SecondTemp,
-                       p.Resources.ExcelFile_TitleColumn_SecondEmployee,
-                    } });
-                    // Cells args are first row, first col, last row, last col
-                    using (var rowRngHeader = actWorksheet.Cells[1, 1, 1, 7])
-                    {
-                        rowRngHeader.Style.Font.Name = "Segoe UI";
-                        rowRngHeader.Style.Font.Bold = true;
-                        rowRngHeader.Style.Font.Size = 12;
-                        rowRngHeader.Style.Border.BorderAround(ExcelBorderStyle.Thin);
-                    }
-                    actWorksheet.Cells.AutoFitColumns();
+                    CreateNewWorksheet(actWorksheet, excelFile, pickedDate);
                 }
 
                 var rowCount = actWorksheet.Dimension.End.Row;
@@ -354,7 +335,37 @@ namespace TemperatureMeasurementTool
 
             }
         }
-        
+
+        /// <summary>
+        /// Creates a new worksheet for the picked date
+        /// </summary>
+        /// <param name="actWorksheet"></param>
+        /// <param name="excelFile"></param>
+        /// <param name="pickedDate"></param>
+        private void CreateNewWorksheet(ExcelWorksheet actWorksheet, ExcelPackage excelFile, DateTime pickedDate)
+        {
+            actWorksheet = excelFile.Workbook.Worksheets.Add(pickedDate.Year.ToString());
+            excelFile.Workbook.Worksheets.MoveToStart(actWorksheet.Index);
+            actWorksheet.Cells["A1:G1"].LoadFromArrays(new List<string[]>() { new[] {
+                       p.Resources.ExcelFile_TitleColumn_Date ,
+                       p.Resources.ExcelFile_TitleColumn_FirstTime,
+                       p.Resources.ExcelFile_TitleColumn_FirstTemp,
+                       p.Resources.ExcelFile_TitleColumn_FirstEmployee,
+                       p.Resources.ExcelFile_TitleColumn_SecondTime,
+                       p.Resources.ExcelFile_TitleColumn_SecondTemp,
+                       p.Resources.ExcelFile_TitleColumn_SecondEmployee,
+                    } });
+            // Cells args are first row, first col, last row, last col
+            using (var rowRngHeader = actWorksheet.Cells[1, 1, 1, 7])
+            {
+                rowRngHeader.Style.Font.Name = "Segoe UI";
+                rowRngHeader.Style.Font.Bold = true;
+                rowRngHeader.Style.Font.Size = 12;
+                rowRngHeader.Style.Border.BorderAround(ExcelBorderStyle.Thin);
+            }
+            actWorksheet.Cells.AutoFitColumns();
+        }
+
         /// <summary>
         /// Gets called when timer runs out to hide the information text again
         /// </summary>
