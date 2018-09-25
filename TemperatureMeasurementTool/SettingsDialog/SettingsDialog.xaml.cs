@@ -121,6 +121,17 @@ namespace TemperatureMeasurementTool
                     rowRngHeader.Style.Font.Size = 12;
                     rowRngHeader.Style.Border.BorderAround(ExcelBorderStyle.Thin);
                 }
+
+                //var date = DateTime.Parse("01.01." + DateTime.Today.Year.ToString()); //Starts with the first date of the year
+                //var rowCount = 2; //Starts with the 2. row
+                //while(date.Year.Equals(DateTime.Today.Year))
+                //{
+                //    excelWorksheet.Cells["A" + rowCount].Value = date.ToShortDateString();
+                //    rowCount = ++rowCount;
+                //    date = date.AddDays(1);
+                //}
+
+
                 excelWorksheet.Cells.AutoFitColumns();
                 var excelFile = new FileInfo(fileDialog.FileName);
                 excel.SaveAs(excelFile);

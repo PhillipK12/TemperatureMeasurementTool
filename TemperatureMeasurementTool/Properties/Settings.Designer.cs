@@ -111,18 +111,6 @@ namespace TemperatureMeasurementTool.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool IsShuffleTimeMockupEnabled {
-            get {
-                return ((bool)(this["IsShuffleTimeMockupEnabled"]));
-            }
-            set {
-                this["IsShuffleTimeMockupEnabled"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("2016-01-01")]
         public global::System.DateTime RecentSinceDateTime {
             get {
@@ -160,12 +148,12 @@ namespace TemperatureMeasurementTool.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("3.4")]
-        public decimal RecentTemperatureLimit {
+        public decimal RecentTemperatureInput {
             get {
-                return ((decimal)(this["RecentTemperatureLimit"]));
+                return ((decimal)(this["RecentTemperatureInput"]));
             }
             set {
-                this["RecentTemperatureLimit"] = value;
+                this["RecentTemperatureInput"] = value;
             }
         }
         

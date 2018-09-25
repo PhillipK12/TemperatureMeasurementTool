@@ -259,6 +259,15 @@ namespace TemperatureMeasurementTool.Properties {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Keine Exceldatei bekannt! ähnelt.
+        /// </summary>
+        public static string MainWindow_Message_NoExcelFile {
+            get {
+                return ResourceManager.GetString("MainWindow_Message_NoExcelFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Eintrag erfolgreich abgespeichert ähnelt.
         /// </summary>
         public static string MainWindow_Message_SuccessfullyEntered {

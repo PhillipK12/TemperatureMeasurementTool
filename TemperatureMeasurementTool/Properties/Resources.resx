@@ -183,6 +183,9 @@
   <data name="MainWindow_Label_VacationTo" xml:space="preserve">
     <value>Urlaub bis</value>
   </data>
+  <data name="MainWindow_Message_NoExcelFile" xml:space="preserve">
+    <value>Keine Exceldatei bekannt!</value>
+  </data>
   <data name="MainWindow_Message_SuccessfullyEntered" xml:space="preserve">
     <value>Eintrag erfolgreich abgespeichert</value>
   </data>

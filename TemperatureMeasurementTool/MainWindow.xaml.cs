@@ -57,7 +57,7 @@ namespace TemperatureMeasurementTool
                 LstAssignedEmployees.SelectedIndex = Settings.Default.IndexRecentSelectedEmployee;
             }
 
-            TempInput.Text = Settings.Default.RecentTemperatureLimit.ToString(CultureInfo.CurrentCulture);
+            TempInput.Text = Settings.Default.RecentTemperatureInput.ToString(CultureInfo.CurrentCulture);
             if (string.IsNullOrWhiteSpace(Settings.Default.ExcelFilePath) ||
                 File.Exists(Settings.Default.ExcelFilePath) == false)
             {
@@ -192,6 +192,19 @@ namespace TemperatureMeasurementTool
         /// <param name="e"></param>
         private void BtnDone_OnClick(object sender, RoutedEventArgs e)
         {
+            //if Excel file path does not exist then show settings & dont save
+            if (string.IsNullOrWhiteSpace(Settings.Default.ExcelFilePath) || File.Exists(Settings.Default.ExcelFilePath) == false)
+            {
+                ShowInformationText(p.Resources.MainWindow_Message_NoExcelFile);
+                //Opens the Settings Dialog for choosing an existing excel file or creating one so its possible to save an temperature
+                //TODO There are 2 Options 1.)make Settings Dialog in this scenario modal, so user can't save any entry 2.)Catch users action to save or close file without any file existing
+                _settingsDialog = new SettingsDialog();
+                _settingsDialog.Show();
+                _settingsDialog.NeedExcelFilePath(true);
+                _settingsDialog.MainWindow = this;
+                return;
+            }            
+
             using (ExcelPackage excelFile = new ExcelPackage(new FileInfo(Settings.Default.ExcelFilePath)))
             {
                 var pickedDate = DateTime.Parse(DtpActualDate.Text);
@@ -330,6 +343,8 @@ namespace TemperatureMeasurementTool
                         }
                     }
                 }
+                Settings.Default.RecentTemperatureInput = Convert.ToDecimal(TempInput.Text, new NumberFormatInfo() { NumberDecimalSeparator = "," });
+                Settings.Default.Save();
                 if (isSaved) ShowInformationText(p.Resources.MainWindow_Message_SuccessfullyEntered);
                 if (Settings.Default.IsCloseAfterSaveEnabled) Close();
 

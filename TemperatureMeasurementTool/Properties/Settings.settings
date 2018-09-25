@@ -27,9 +27,6 @@
     <Setting Name="TemperatureLimitTo" Type="System.Decimal" Scope="User">
       <Value Profile="(Default)">4.0</Value>
     </Setting>
-    <Setting Name="IsShuffleTimeMockupEnabled" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">False</Value>
-    </Setting>
     <Setting Name="RecentSinceDateTime" Type="System.DateTime" Scope="User">
       <Value Profile="(Default)">2016-01-01</Value>
     </Setting>
@@ -39,7 +36,7 @@
     <Setting Name="IndexRecentSelectedEmployee" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">0</Value>
     </Setting>
-    <Setting Name="RecentTemperatureLimit" Type="System.Decimal" Scope="User">
+    <Setting Name="RecentTemperatureInput" Type="System.Decimal" Scope="User">
       <Value Profile="(Default)">3.4</Value>
     </Setting>
     <Setting Name="IsCloseAfterSaveSettings" Type="System.Boolean" Scope="User">
