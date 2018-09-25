@@ -5,7 +5,7 @@ This [pdf](https://praxissiegel.de/cms/upload/PDFs/Leitfaden_Zertifizierung_HA_v
  **Zertifizierungskriterium C5 says:** 
 > "Der Kühlschrank der Praxis, in dem Arzneimittel aufbewahrt werden, ist mit einem funktionstüchtigen MinimumMaximum-Thermometer ausgestattet. Die Temperatur im Kühlschrank liegt im Normbereich zwischen 2 und 8 Grad Celsius und wird werktäglich dokumentiert. Die Zuständigkeiten für die Dokumentation sind geregelt."
 >  
-# Features
+## Features
  - Supports XLSX with the Library **[EPPlus](https://github.com/JanKallman/EPPlus)** 
  - It also notes observes local holidays with the Library **[Nager.Date](https://github.com/tinohager/Nager.Date)**
  - Insert vacation days 
