@@ -97,6 +97,15 @@ namespace TemperatureMeasurementTool.Properties {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Urlaub ähnelt.
+        /// </summary>
+        public static string ExcelFile_EntryText_Vacation {
+            get {
+                return ResourceManager.GetString("ExcelFile_EntryText_Vacation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Datum ähnelt.
         /// </summary>
         public static string ExcelFile_TitleColumn_Date {
@@ -259,6 +268,24 @@ namespace TemperatureMeasurementTool.Properties {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Ist ein Feiertag ähnelt.
+        /// </summary>
+        public static string MainWindow_Message_Holiday {
+            get {
+                return ResourceManager.GetString("MainWindow_Message_Holiday", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Keine Datum ausgewählt ähnelt.
+        /// </summary>
+        public static string MainWindow_Message_NoDatePicked {
+            get {
+                return ResourceManager.GetString("MainWindow_Message_NoDatePicked", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Keine Exceldatei bekannt! ähnelt.
         /// </summary>
         public static string MainWindow_Message_NoExcelFile {
@@ -273,6 +300,15 @@ namespace TemperatureMeasurementTool.Properties {
         public static string MainWindow_Message_SuccessfullyEntered {
             get {
                 return ResourceManager.GetString("MainWindow_Message_SuccessfullyEntered", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Wochentag ist ein ähnelt.
+        /// </summary>
+        public static string MainWindow_Message_Weekend {
+            get {
+                return ResourceManager.GetString("MainWindow_Message_Weekend", resourceCulture);
             }
         }
         

@@ -23,6 +23,7 @@ using CheckBox = System.Windows.Controls.CheckBox;
 using TextBox = System.Windows.Controls.TextBox;
 using Window = System.Windows.Window;
 using p = TemperatureMeasurementTool.Properties;
+using Nager.Date;
 
 namespace TemperatureMeasurementTool
 {
@@ -122,14 +123,31 @@ namespace TemperatureMeasurementTool
                     rowRngHeader.Style.Border.BorderAround(ExcelBorderStyle.Thin);
                 }
 
-                //var date = DateTime.Parse("01.01." + DateTime.Today.Year.ToString()); //Starts with the first date of the year
-                //var rowCount = 2; //Starts with the 2. row
-                //while(date.Year.Equals(DateTime.Today.Year))
-                //{
-                //    excelWorksheet.Cells["A" + rowCount].Value = date.ToShortDateString();
-                //    rowCount = ++rowCount;
-                //    date = date.AddDays(1);
-                //}
+                var date = DateTime.Parse("01.01." + DateTime.Today.Year.ToString()); //Starts with the first date of the year
+                var rowCount = 2; //Starts with the 2. row
+                while (date.Year.Equals(DateTime.Today.Year))
+                {
+                    excelWorksheet.Cells["A" + rowCount].Value = date.ToShortDateString();
+                    string value;
+                    //Feiertag eintragen
+                    if (DateSystem.IsOfficialPublicHolidayByCounty(date, CountryCode.DE, Settings.Default.CountryCode))
+                    {
+                        value = p.Resources.Holiday;
+                        excelWorksheet.Cells[$"B{rowCount}:G{rowCount}"].Merge = true;
+                        excelWorksheet.Cells[$"B{rowCount}"].Value = value;
+                        excelWorksheet.Cells[$"B{rowCount}"].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+                    }
+                    //Wochenenden eintragen
+                    else if (date.DayOfWeek == DayOfWeek.Sunday || date.DayOfWeek == DayOfWeek.Saturday)
+                    {
+                        value = p.Resources.Weekend;
+                        excelWorksheet.Cells[$"B{rowCount}:G{rowCount}"].Merge = true;
+                        excelWorksheet.Cells[$"B{rowCount}"].Value = value;
+                        excelWorksheet.Cells[$"B{rowCount}"].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+                    }
+                    rowCount = ++rowCount;
+                    date = date.AddDays(1);
+                }
 
 
                 excelWorksheet.Cells.AutoFitColumns();
@@ -243,7 +261,7 @@ namespace TemperatureMeasurementTool
             if (MainWindow != null)
             {
                 if (MainWindow.WindowState == WindowState.Minimized) MainWindow.WindowState = WindowState.Normal;
-                MainWindow.ShowInformationText(p.Resources.SettingsDialog_Message_SuccessfullySaved);
+                MainWindow.ShowInformationText(p.Resources.SettingsDialog_Message_SuccessfullySaved, MessageTyp.Information);
                 MainWindow.SettingsChanged();
             }
             Close();

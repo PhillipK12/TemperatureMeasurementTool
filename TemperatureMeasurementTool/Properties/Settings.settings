@@ -45,11 +45,8 @@
     <Setting Name="MockUpFileName" Type="System.String" Scope="User">
       <Value Profile="(Default)">TemperatureMeasurementMockupData.xlsx</Value>
     </Setting>
-    <Setting Name="DateLastRecord" Type="System.DateTime" Scope="User">
-      <Value Profile="(Default)">2018-09-10</Value>
-    </Setting>
-    <Setting Name="MissingDateCollection" Type="System.Collections.Specialized.StringCollection" Scope="User">
-      <Value Profile="(Default)" />
+    <Setting Name="EntriesStartsWith" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">2</Value>
     </Setting>
     <Setting Name="MailTransmitterAdress" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
@@ -59,6 +56,9 @@
     </Setting>
     <Setting Name="DateFormat" Type="System.String" Scope="Application">
       <Value Profile="(Default)">dd.MM.yyyy</Value>
+    </Setting>
+    <Setting Name="MissingDateCollection" Type="System.Collections.Specialized.StringCollection" Scope="User">
+      <Value Profile="(Default)" />
     </Setting>
   </Settings>
 </SettingsFile>

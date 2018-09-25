@@ -343,10 +343,10 @@
                     <TextBlock Text="{x:Static p:Resources.MainWindow_Label_Done}" Foreground="White" VerticalAlignment="Center" Margin="5,0,0,0"/>
                 </StackPanel>
             </Button>
-            <Border x:Name="BorHinweis" BorderThickness="1" VerticalAlignment="Center" BorderBrush="#6495ED" CornerRadius="5" Margin="50,0,0,0">
+            <Border x:Name="BorHint" BorderThickness="1" VerticalAlignment="Center" BorderBrush="#6495ED" CornerRadius="5" Margin="50,0,0,0" Visibility="Collapsed">
                 <StackPanel Orientation="Horizontal" Margin="20,5,20,5" >
-                    <TextBlock Text="&#xE946;"  FontSize="16" FontFamily="Segoe MDL2 Assets" Foreground="#6495ED" VerticalAlignment="Center" />
-                    <TextBlock x:Name="TxtHinweis" VerticalAlignment="Top" Foreground="#6495ED"  Margin="10,0,0,0"></TextBlock>
+                    <TextBlock x:Name="SymbolHint" Text="&#xE946;"  FontSize="16" FontFamily="Segoe MDL2 Assets" Foreground="#6495ED" VerticalAlignment="Center" />
+                    <TextBlock x:Name="TxtHint" VerticalAlignment="Top" Foreground="#6495ED"  Margin="10,0,0,0"></TextBlock>
                 </StackPanel>
             </Border>
         </StackPanel>

@@ -183,24 +183,13 @@ namespace TemperatureMeasurementTool.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("2018-09-10")]
-        public global::System.DateTime DateLastRecord {
+        [global::System.Configuration.DefaultSettingValueAttribute("2")]
+        public int EntriesStartsWith {
             get {
-                return ((global::System.DateTime)(this["DateLastRecord"]));
+                return ((int)(this["EntriesStartsWith"]));
             }
             set {
-                this["DateLastRecord"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public global::System.Collections.Specialized.StringCollection MissingDateCollection {
-            get {
-                return ((global::System.Collections.Specialized.StringCollection)(this["MissingDateCollection"]));
-            }
-            set {
-                this["MissingDateCollection"] = value;
+                this["EntriesStartsWith"] = value;
             }
         }
         
@@ -234,6 +223,17 @@ namespace TemperatureMeasurementTool.Properties {
         public string DateFormat {
             get {
                 return ((string)(this["DateFormat"]));
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.Collections.Specialized.StringCollection MissingDateCollection {
+            get {
+                return ((global::System.Collections.Specialized.StringCollection)(this["MissingDateCollection"]));
+            }
+            set {
+                this["MissingDateCollection"] = value;
             }
         }
     }

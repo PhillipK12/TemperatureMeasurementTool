@@ -129,6 +129,9 @@
   <data name="ErrorMessageTitle" xml:space="preserve">
     <value>Excel vorher schließen</value>
   </data>
+  <data name="ExcelFile_EntryText_Vacation" xml:space="preserve">
+    <value>Urlaub</value>
+  </data>
   <data name="ExcelFile_TitleColumn_Date" xml:space="preserve">
     <value>Datum</value>
   </data>
@@ -183,11 +186,20 @@
   <data name="MainWindow_Label_VacationTo" xml:space="preserve">
     <value>Urlaub bis</value>
   </data>
+  <data name="MainWindow_Message_Holiday" xml:space="preserve">
+    <value>Ist ein Feiertag</value>
+  </data>
+  <data name="MainWindow_Message_NoDatePicked" xml:space="preserve">
+    <value>Keine Datum ausgewählt</value>
+  </data>
   <data name="MainWindow_Message_NoExcelFile" xml:space="preserve">
     <value>Keine Exceldatei bekannt!</value>
   </data>
   <data name="MainWindow_Message_SuccessfullyEntered" xml:space="preserve">
     <value>Eintrag erfolgreich abgespeichert</value>
+  </data>
+  <data name="MainWindow_Message_Weekend" xml:space="preserve">
+    <value>Wochentag ist ein</value>
   </data>
   <data name="MainWindow_Title" xml:space="preserve">
     <value>TMT Eingabe</value>
