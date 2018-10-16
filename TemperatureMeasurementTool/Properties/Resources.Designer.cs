@@ -358,7 +358,8 @@ namespace TemperatureMeasurementTool.Properties {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Keine Exceldatei bekannt. \n Wählen Sie eine Datei aus oder erstellen Sie eine Neue. ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Keine Exceldatei bekannt.
+        ///Wählen Sie eine Datei aus oder erstellen Sie eine Neue. ähnelt.
         /// </summary>
         public static string SettingsDialog_Label_ErrorTextNoExcelFile {
             get {
@@ -538,7 +539,7 @@ namespace TemperatureMeasurementTool.Properties {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die 1.1 ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die 2.0 ähnelt.
         /// </summary>
         public static string Version {
             get {

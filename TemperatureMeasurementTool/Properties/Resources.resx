@@ -217,7 +217,8 @@
     <value>Mitarbeiter</value>
   </data>
   <data name="SettingsDialog_Label_ErrorTextNoExcelFile" xml:space="preserve">
-    <value>Keine Exceldatei bekannt. \n Wählen Sie eine Datei aus oder erstellen Sie eine Neue.</value>
+    <value>Keine Exceldatei bekannt.
+Wählen Sie eine Datei aus oder erstellen Sie eine Neue.</value>
   </data>
   <data name="SettingsDialog_Label_File" xml:space="preserve">
     <value>Datei</value>
@@ -277,7 +278,7 @@
     <value>Urlaub</value>
   </data>
   <data name="Version" xml:space="preserve">
-    <value>1.1</value>
+    <value>2.0</value>
   </data>
   <data name="Weekend" xml:space="preserve">
     <value>Wochenende</value>
